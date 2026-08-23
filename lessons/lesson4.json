@@ -1,0 +1,314 @@
+{
+  "num": "4과",
+  "lesson": "4",
+  "title": "꾸준히 운동을 하면 건강해져요",
+  "en": "If you exercise steadily, you become healthy",
+  "vocab": [
+    {
+      "theme": "자기 계발 · Self-improvement",
+      "items": [
+        {
+          "kw": "강의",
+          "mean": "lecture, class",
+          "ex": "저는 학교에서 한국 역사 강의를 듣고 있습니다.",
+          "exen": "I'm taking a Korean history lecture at school."
+        },
+        {
+          "kw": "결심(하다)",
+          "mean": "to decide, resolve",
+          "ex": "올해부터는 매일 운동을 하기로 결심했어요.",
+          "exen": "I've resolved to exercise every day starting this year."
+        },
+        {
+          "kw": "과정",
+          "mean": "process, course",
+          "ex": "이번 프로젝트는 진행하는 과정은 힘들었으나 그 결과는 무척 좋았습니다.",
+          "exen": "The process of this project was hard, but the result was very good."
+        },
+        {
+          "kw": "꾸준히",
+          "mean": "steadily, consistently",
+          "ex": "꾸준히 노력하면 좋은 결과를 얻을 수 있어요.",
+          "exen": "If you make steady effort, you can get good results."
+        },
+        {
+          "kw": "동영상",
+          "mean": "video",
+          "ex": "동영상 강의는 생각보다 재미있었다.",
+          "exen": "The video lecture was more fun than I expected."
+        },
+        {
+          "kw": "부러워하다",
+          "mean": "to envy, be envious",
+          "ex": "내 동생은 친구의 새 노트북을 보고 무척 부러워했다.",
+          "exen": "My sibling was very envious seeing a friend's new laptop."
+        },
+        {
+          "kw": "부지런하다",
+          "mean": "to be diligent, hardworking",
+          "ex": "민국 씨는 매우 부지런해서 새벽에는 운동을 하고 퇴근 후에는 외국어를 배워요.",
+          "exen": "Mingook is very diligent — he exercises at dawn and studies a language after work."
+        },
+        {
+          "kw": "솜씨",
+          "mean": "skill, knack (handiwork)",
+          "ex": "우리 어머니는 음식 솜씨가 좋으세요.",
+          "exen": "My mother is a skilled cook."
+        },
+        {
+          "kw": "실력",
+          "mean": "ability, skill level",
+          "ex": "저는 아직 한국어 실력이 부족한 것 같아요.",
+          "exen": "I feel my Korean ability is still lacking."
+        },
+        {
+          "kw": "익숙하다",
+          "mean": "to be familiar, be used to",
+          "ex": "후안 씨는 아직 운전에 익숙하지 않아요.",
+          "exen": "Juan isn't used to driving yet."
+        },
+        {
+          "kw": "익히다",
+          "mean": "to learn, master, get the hang of",
+          "ex": "사비나 씨는 일을 하면서 한글 서류를 만드는 방법을 익혔습니다.",
+          "exen": "Sabina learned how to make Korean documents while working."
+        },
+        {
+          "kw": "자기",
+          "mean": "oneself, one's own",
+          "ex": "지수는 자기 방에서 공부를 하고 있어요.",
+          "exen": "Jisu is studying in her own room."
+        },
+        {
+          "kw": "자기 계발",
+          "mean": "self-development, self-improvement",
+          "ex": "많은 직장인들이 퇴근 후에 자기 계발을 하고 있다.",
+          "exen": "Many office workers pursue self-development after work."
+        },
+        {
+          "kw": "전문적",
+          "mean": "professional, specialized",
+          "ex": "리사 씨는 사진을 전문적으로 배우고 있어요.",
+          "exen": "Lisa is learning photography professionally."
+        },
+        {
+          "kw": "직접",
+          "mean": "directly, in person, oneself",
+          "ex": "이건 제가 직접 만든 비누예요. 한번 써 보세요.",
+          "exen": "This is soap I made myself. Give it a try."
+        },
+        {
+          "kw": "취향",
+          "mean": "taste, preference",
+          "ex": "저와 지수는 성격도 비슷하고 취향도 비슷해서 쉽게 친해졌어요.",
+          "exen": "Jisu and I have similar personalities and tastes, so we became close easily."
+        },
+        {
+          "kw": "특기",
+          "mean": "special talent, forte",
+          "ex": "선미는 노래를 잘하는 특기를 살려서 가수가 됐어요.",
+          "exen": "Sunmi used her talent for singing to become a singer."
+        },
+        {
+          "kw": "최선을 다하다",
+          "mean": "to do one's best",
+          "ex": "우리 팀은 최선을 다했지만 이번 경기에 졌다.",
+          "exen": "Our team did its best but lost this match."
+        }
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "form": "-는다/-ㄴ다",
+      "tag": "plain declarative (written / diary style)",
+      "def_ko": "말할 때 듣는 사람을 아주 낮추거나, 글에서 높임과 낮춤을 중화하여 표현하는 종결 어미.",
+      "def_en": "A sentence-final ending for plain, non-honorific speech (to someone of lower standing), or the neutral 'written / diary' style used in essays, news, and journals.",
+      "ex": [
+        {
+          "ko": "나는 주말에 인터넷으로 수업을 듣는다.",
+          "en": "I take classes online on weekends. (written / plain)"
+        },
+        {
+          "ko": "지난 주말에 도서관에서 공부를 했다.",
+          "en": "I studied at the library last weekend."
+        },
+        {
+          "ko": "내 동생은 멀미가 심해서 배를 잘 타지 않는다.",
+          "en": "My sibling gets carsick easily, so doesn't ride boats well."
+        },
+        {
+          "ko": "민국이는 운동선수이다.",
+          "en": "Mingook is an athlete."
+        },
+        {
+          "ko": "아빠는 먼저 잔다.",
+          "en": "Dad's going to sleep first. (casual plain speech)"
+        }
+      ],
+      "info_ko": "동사는 받침 O '-는다', 받침 X '-ㄴ다'. 형용사는 기본형 그대로, '이다'는 '이다'.",
+      "info_en": "Verbs take 는다 (with final consonant) / ㄴ다 (no final consonant); adjectives stay in dictionary form; 이다 stays 이다.",
+      "table": {
+        "head": [
+          "품사",
+          "기본형",
+          "활용"
+        ],
+        "rows": [
+          [
+            "동사 · 받침 O",
+            "먹다",
+            "먹는다"
+          ],
+          [
+            "동사 · 받침 X",
+            "오다",
+            "온다"
+          ],
+          [
+            "동사 · 받침 'ㄹ'",
+            "살다",
+            "산다"
+          ],
+          [
+            "형용사",
+            "작다",
+            "작다 (그대로)"
+          ],
+          [
+            "형용사",
+            "크다",
+            "크다 (그대로)"
+          ],
+          [
+            "(명사)이다",
+            "학생",
+            "학생이다"
+          ],
+          [
+            "(명사)이다",
+            "의사",
+            "의사(이)다"
+          ]
+        ]
+      },
+      "table2": {
+        "caption": "시제별 활용 · Plain style across tenses (present / past / future)",
+        "head": [
+          "기본형",
+          "-는다 (현재)",
+          "-었다 (과거)",
+          "-(으)ㄹ 것이다 (미래)"
+        ],
+        "rows": [
+          [
+            "먹다",
+            "먹는다",
+            "먹었다",
+            "먹을 것이다"
+          ],
+          [
+            "찾다",
+            "찾는다",
+            "찾았다",
+            "찾을 것이다"
+          ],
+          [
+            "공부하다",
+            "공부한다",
+            "공부했다",
+            "공부할 것이다"
+          ],
+          [
+            "만들다",
+            "만든다",
+            "만들었다",
+            "만들 것이다"
+          ],
+          [
+            "보지 않다",
+            "보지 않는다",
+            "보지 않았다",
+            "보지 않을 것이다"
+          ],
+          [
+            "작다",
+            "작다",
+            "작았다",
+            "작을 것이다"
+          ],
+          [
+            "예쁘다",
+            "예쁘다",
+            "예뻤다",
+            "예쁠 것이다"
+          ],
+          [
+            "선생님이다",
+            "선생님이다",
+            "선생님이었다",
+            "선생님일 것이다"
+          ],
+          [
+            "의사이다",
+            "의사이다",
+            "의사였다",
+            "의사일 것이다"
+          ],
+          [
+            "회사원이 아니다",
+            "회사원이 아니다",
+            "회사원이 아니었다",
+            "회사원이 아닐 것이다"
+          ]
+        ]
+      }
+    },
+    {
+      "form": "-아/어지다",
+      "tag": "to become, to get (+ adjective)",
+      "def_ko": "형용사 뒤에 붙어 그 상태로 점점 변해 감을 나타내는 표현.",
+      "def_en": "Added to an adjective to show that something gradually changes into that state — 'become / get ~'.",
+      "ex": [
+        {
+          "ko": "꾸준히 운동을 하면 건강해져요.",
+          "en": "If you exercise steadily, you become healthy."
+        },
+        {
+          "ko": "겨울이 되니까 날씨가 추워졌어요.",
+          "en": "Now that winter has come, the weather has gotten cold."
+        },
+        {
+          "ko": "달콤한 음식을 먹으면 기분이 좋아져요.",
+          "en": "When you eat something sweet, your mood gets better."
+        }
+      ],
+      "info_ko": "형용사와 결합한다.",
+      "info_en": "Combines with adjectives.",
+      "table": {
+        "head": [
+          "형용사",
+          "기본형",
+          "활용"
+        ],
+        "rows": [
+          [
+            "ㅏ, ㅗ",
+            "작다",
+            "작아지다"
+          ],
+          [
+            "그 외",
+            "길다",
+            "길어지다"
+          ],
+          [
+            "하다",
+            "조용하다",
+            "조용해지다"
+          ]
+        ]
+      }
+    }
+  ]
+}

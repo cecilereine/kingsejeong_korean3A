@@ -1,0 +1,305 @@
+{
+  "num": "1과",
+  "lesson": "1",
+  "title": "약속 시간에 늦으면 안 돼요",
+  "en": "You shouldn't be late to your appointments",
+  "vocab": [
+    {
+      "theme": "모임 · Social gatherings",
+      "items": [
+        {
+          "kw": "동아리",
+          "mean": "club, circle",
+          "ex": "우리 동아리는 한국 전통 노래를 배우는 동아리예요.",
+          "exen": "Our club is a club that learns traditional Korean songs."
+        },
+        {
+          "kw": "동창",
+          "mean": "schoolmate, alumnus (same year)",
+          "ex": "초등학교 동창을 만나서 함께 밥을 먹었어요.",
+          "exen": "I met an elementary-school classmate and we ate together."
+        },
+        {
+          "kw": "동창회",
+          "mean": "alumni reunion / association",
+          "ex": "고등학교 동창회에서 오랜만에 선생님을 만났어요.",
+          "exen": "I met my teacher after a long time at the high-school reunion."
+        },
+        {
+          "kw": "동호회",
+          "mean": "hobby club, society",
+          "ex": "요즘 주말마다 스키 동호회 사람들과 스키를 타요.",
+          "exen": "These days I ski with the ski club every weekend."
+        },
+        {
+          "kw": "송별회",
+          "mean": "farewell party",
+          "ex": "다음 달에 고향에 돌아가는 친구에게 송별회를 해 줬어요.",
+          "exen": "I threw a farewell party for a friend returning home next month."
+        },
+        {
+          "kw": "신입",
+          "mean": "new member, newcomer",
+          "ex": "이번에 새로 들어온 신입 회원은 모두 2명입니다.",
+          "exen": "There are two new members who joined this time."
+        },
+        {
+          "kw": "환영회",
+          "mean": "welcome party",
+          "ex": "기숙사에 새로 들어오는 친구들에게 환영회를 해 주려고 해요.",
+          "exen": "We plan to hold a welcome party for the new dorm students."
+        },
+        {
+          "kw": "회장",
+          "mean": "president, chairperson",
+          "ex": "우리는 동창회 회장으로 정우를 뽑았어요.",
+          "exen": "We elected Jeongwoo as president of the reunion."
+        }
+      ]
+    },
+    {
+      "theme": "모임 활동 · Social activities",
+      "items": [
+        {
+          "kw": "가입(하다)",
+          "mean": "to join, sign up",
+          "ex": "이 모임에 가입을 하려면 어떻게 해야 해요?",
+          "exen": "What do I need to do to join this group?"
+        },
+        {
+          "kw": "각자",
+          "mean": "each, individually",
+          "ex": "내일 점심 식사는 각자 준비해서 오세요.",
+          "exen": "Please prepare your own lunch tomorrow."
+        },
+        {
+          "kw": "게시판",
+          "mean": "bulletin board",
+          "ex": "기숙사 선생님이 게시판에 기숙사 규칙을 붙였어요.",
+          "exen": "The dorm teacher posted the dorm rules on the board."
+        },
+        {
+          "kw": "공지(하다)",
+          "mean": "to announce, give notice",
+          "ex": "선생님께서 시험 일정을 공지해 주셨어요.",
+          "exen": "The teacher announced the exam schedule."
+        },
+        {
+          "kw": "그룹",
+          "mean": "group",
+          "ex": "2학년 그룹이 먼저 출발하면 우리 3학년 그룹이 따라 가겠습니다.",
+          "exen": "Once the 2nd-year group leaves, our 3rd-year group will follow."
+        },
+        {
+          "kw": "명단",
+          "mean": "name list, roster",
+          "ex": "동아리 회원 명단에서 자신의 이름을 확인하세요.",
+          "exen": "Check your name on the club member list."
+        },
+        {
+          "kw": "모이다",
+          "mean": "to gather, assemble",
+          "ex": "축구하고 싶은 사람들은 토요일 10시까지 운동장에 모이세요.",
+          "exen": "Those who want to play soccer, gather at the field by 10 on Saturday."
+        },
+        {
+          "kw": "모집(하다)",
+          "mean": "to recruit",
+          "ex": "보통 3월에 동아리 신입 회원을 모집해요.",
+          "exen": "We usually recruit new club members in March."
+        },
+        {
+          "kw": "목록",
+          "mean": "list",
+          "ex": "장을 보기 전에 사고 싶은 물건의 목록을 적었어요.",
+          "exen": "Before shopping I wrote a list of things I wanted to buy."
+        },
+        {
+          "kw": "신청서",
+          "mean": "application form",
+          "ex": "동아리에 들어오고 싶은 분은 신청서에 이름과 연락처를 써 주세요.",
+          "exen": "If you want to join the club, write your name and contact on the application form."
+        },
+        {
+          "kw": "정기적",
+          "mean": "regular, periodic",
+          "ex": "우리 동아리는 한 달에 한 번 정기적으로 모임을 해요.",
+          "exen": "Our club meets regularly once a month."
+        },
+        {
+          "kw": "활동",
+          "mean": "activity",
+          "ex": "앞으로 동호회 활동에 열심히 참여해 주세요.",
+          "exen": "Please take an active part in the club activities from now on."
+        },
+        {
+          "kw": "회비",
+          "mean": "membership fee, dues",
+          "ex": "우리 모임의 회비는 30,000원입니다.",
+          "exen": "Our group's membership fee is 30,000 won."
+        }
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "form": "-(으)려면",
+      "tag": "in order to / if you intend to",
+      "def_ko": "앞에 오는 말이 뒤에 오는 행동을 할 의도나 의향이 있다고 가정함을 나타내는 연결 어미.",
+      "def_en": "A connective ending that assumes an intention or willingness to do the act in the following clause.",
+      "ex": [
+        {
+          "ko": "명동에 가려면 몇 번 버스를 타야 해요?",
+          "en": "To get to Myeongdong, which bus should I take?"
+        },
+        {
+          "ko": "수업 시간에 지각하지 않으려면 7시에 일어나야 해요.",
+          "en": "To avoid being late for class, you have to get up at 7."
+        }
+      ],
+      "info_ko": "동사와 결합한다.",
+      "info_en": "Combines with verbs.",
+      "table": {
+        "head": [
+          "받침",
+          "기본형",
+          "활용"
+        ],
+        "rows": [
+          [
+            "받침 O",
+            "먹다",
+            "먹으려면"
+          ],
+          [
+            "받침 X",
+            "오다",
+            "오려면"
+          ],
+          [
+            "받침 'ㄹ'",
+            "살다",
+            "살려면"
+          ]
+        ]
+      }
+    },
+    {
+      "form": "-(으)면 되다 / 안 되다",
+      "tag": "it's fine if… / must not…",
+      "def_ko": "-(으)면 되다: 앞 말의 조건이나 상태만 갖추어지면 문제가 없거나 충분함을 나타내는 표현. / -(으)면 안 되다: 앞 말의 행동이나 상태를 금지하거나 제한함을 나타내는 표현.",
+      "def_en": "-(으)면 되다: it is enough / no problem if the stated condition is met.  -(으)면 안 되다: prohibits or restricts the stated action or state.",
+      "ex": [
+        {
+          "ko": "숙제는 이메일로 보내면 돼요.",
+          "en": "You can just send the homework by email."
+        },
+        {
+          "ko": "쓰레기는 저쪽에 있는 쓰레기장에 버리면 됩니다.",
+          "en": "You may throw the trash in the dump over there."
+        },
+        {
+          "ko": "약속 시간에 늦으면 안 돼요.",
+          "en": "You must not be late for the appointment."
+        },
+        {
+          "ko": "여기는 공부를 하는 곳이니까 떠들면 안 됩니다.",
+          "en": "This is a place for studying, so you must not make noise."
+        }
+      ],
+      "info_ko": "동사, 형용사, '이다'와 결합한다.",
+      "info_en": "Combines with verbs, adjectives, and 이다.",
+      "table": {
+        "head": [
+          "품사",
+          "기본형",
+          "활용"
+        ],
+        "rows": [
+          [
+            "동사",
+            "먹다",
+            "먹으면 되다/안 되다"
+          ],
+          [
+            "동사",
+            "오다",
+            "오면 되다/안 되다"
+          ],
+          [
+            "동사",
+            "살다",
+            "살면 되다/안 되다"
+          ],
+          [
+            "형용사",
+            "작다",
+            "작으면 되다/안 되다"
+          ],
+          [
+            "형용사",
+            "크다",
+            "크면 되다/안 되다"
+          ],
+          [
+            "형용사",
+            "길다",
+            "길면 되다/안 되다"
+          ],
+          [
+            "(명사)이다",
+            "학생",
+            "학생이면 되다/안 되다"
+          ],
+          [
+            "(명사)이다",
+            "의사",
+            "의사면 되다/안 되다"
+          ]
+        ]
+      }
+    },
+    {
+      "form": "-(으)로부터",
+      "tag": "from  ·  부가 문법 (Additional grammar)",
+      "extra": true,
+      "def_ko": "앞 말이 어떤 행동이나 사건의 출발점이 되거나 그것이 비롯되는 대상임을 나타내는 조사.",
+      "def_en": "A postposition indicating that an action or situation originates from the attached noun.",
+      "ex": [
+        {
+          "ko": "언니로부터 생일 축하 메시지를 받았어요.",
+          "en": "I received a birthday message from my older sister."
+        },
+        {
+          "ko": "사무실로부터 급한 전화가 왔습니다.",
+          "en": "An urgent call came from the office."
+        },
+        {
+          "ko": "지금으로부터 삼 년 전에 한국어를 배우기 시작했어요.",
+          "en": "I started learning Korean three years ago from now."
+        }
+      ],
+      "info_ko": "명사에 붙는다.",
+      "info_en": "Attaches to nouns.",
+      "table": {
+        "head": [
+          "받침",
+          "기본형",
+          "활용"
+        ],
+        "rows": [
+          [
+            "받침 O",
+            "학생",
+            "학생으로부터"
+          ],
+          [
+            "받침 X",
+            "의사",
+            "의사로부터"
+          ]
+        ]
+      }
+    }
+  ]
+}

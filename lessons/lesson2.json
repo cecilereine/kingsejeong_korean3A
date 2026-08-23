@@ -1,0 +1,324 @@
+{
+  "num": "2과",
+  "lesson": "2",
+  "title": "어제 친구를 우연히 기차역에서 만났어요",
+  "en": "Yesterday I ran into a friend at the train station by chance",
+  "vocab": [
+    {
+      "theme": "만남 · Meetings",
+      "items": [
+        {
+          "kw": "결혼(하다)",
+          "mean": "to marry, get married",
+          "ex": "대한 씨와 미카 씨는 3년 전에 결혼했어요.",
+          "exen": "Daehan and Mika got married three years ago."
+        },
+        {
+          "kw": "만남",
+          "mean": "meeting, encounter",
+          "ex": "저는 리사와의 첫 만남을 잊을 수 없어요.",
+          "exen": "I can't forget my first meeting with Lisa."
+        },
+        {
+          "kw": "반하다",
+          "mean": "to fall for, be charmed",
+          "ex": "후안 씨를 보고 첫눈에 반했어요.",
+          "exen": "I fell for Juan at first sight."
+        },
+        {
+          "kw": "소개팅",
+          "mean": "blind date (set-up)",
+          "ex": "저는 소개팅에서 지금의 여자 친구를 만났어요.",
+          "exen": "I met my current girlfriend on a blind date."
+        },
+        {
+          "kw": "연인",
+          "mean": "lover, couple",
+          "ex": "남산은 연인들이 데이트를 하는 장소로 유명해요.",
+          "exen": "Namsan is famous as a place where couples go on dates."
+        },
+        {
+          "kw": "우연히",
+          "mean": "by chance, coincidentally",
+          "ex": "어제 친구를 우연히 기차역에서 만났어요.",
+          "exen": "Yesterday I ran into a friend at the train station by chance."
+        },
+        {
+          "kw": "인상",
+          "mean": "impression",
+          "ex": "회사 동료들에게 좋은 인상을 남기고 싶어요.",
+          "exen": "I want to leave a good impression on my coworkers."
+        },
+        {
+          "kw": "첫인상",
+          "mean": "first impression",
+          "ex": "그 사람은 첫인상이 좋아서 더 만나 보려고 해요.",
+          "exen": "That person made a good first impression, so I want to see them again."
+        }
+      ]
+    },
+    {
+      "theme": "추억 · Memories",
+      "items": [
+        {
+          "kw": "고백(하다)",
+          "mean": "to confess",
+          "ex": "친구에게 제가 실수한 것을 고백했어요.",
+          "exen": "I confessed my mistake to my friend."
+        },
+        {
+          "kw": "고생(하다)",
+          "mean": "to go through hardship",
+          "ex": "우리 부모님께서는 젊었을 때 고생을 많이 하셨어요.",
+          "exen": "My parents went through a lot of hardship when they were young."
+        },
+        {
+          "kw": "기념(하다)",
+          "mean": "to commemorate, mark",
+          "ex": "결혼 10주년 기념으로 여행을 다녀왔어요.",
+          "exen": "We took a trip to mark our 10th wedding anniversary."
+        },
+        {
+          "kw": "담기다",
+          "mean": "to be contained / captured (in)",
+          "ex": "추억이 담긴 물건은 버리기가 어려워요.",
+          "exen": "It's hard to throw away things that hold memories."
+        },
+        {
+          "kw": "떠오르다",
+          "mean": "to come to mind, be recalled",
+          "ex": "오랜만에 학교에 오니까 고등학교 때 추억들이 떠오르네요.",
+          "exen": "Coming back to school after so long, high-school memories come to mind."
+        },
+        {
+          "kw": "똑똑히",
+          "mean": "clearly, vividly",
+          "ex": "저는 그 말을 아직도 똑똑히 기억하고 있어요.",
+          "exen": "I still remember those words clearly."
+        },
+        {
+          "kw": "소중하다",
+          "mean": "to be precious, valuable",
+          "ex": "이 사진에는 우리 가족의 소중한 기억이 담겨 있어요.",
+          "exen": "This photo holds precious memories of my family."
+        },
+        {
+          "kw": "순간",
+          "mean": "moment, instant",
+          "ex": "우리 팀이 홈런을 치는 순간 함께 응원하는 사람들이 기뻐서 박수를 쳤어요.",
+          "exen": "The moment our team hit a home run, the cheering fans clapped with joy."
+        },
+        {
+          "kw": "영원히",
+          "mean": "forever, eternally",
+          "ex": "우리의 아름다운 추억을 영원히 기억할게요.",
+          "exen": "I'll remember our beautiful memories forever."
+        },
+        {
+          "kw": "우정",
+          "mean": "friendship",
+          "ex": "친구들과의 우정은 무엇보다도 소중한 거예요.",
+          "exen": "Friendship with friends is more precious than anything."
+        },
+        {
+          "kw": "인생",
+          "mean": "life",
+          "ex": "나는 행복한 인생을 살고 싶어요.",
+          "exen": "I want to live a happy life."
+        },
+        {
+          "kw": "추억",
+          "mean": "memory, recollection",
+          "ex": "지나간 모든 순간은 아름다운 추억이 되는 것 같아요.",
+          "exen": "Every moment that passes seems to become a beautiful memory."
+        }
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "form": "-아/어도",
+      "tag": "even if, even though",
+      "def_ko": "앞에 오는 말을 가정하거나 인정하지만 뒤에 오는 말에는 관계가 없거나 영향을 끼치지 않음을 나타내는 연결 어미.",
+      "def_en": "A connective ending showing that the preceding clause is supposed or admitted, yet it has no relation to or effect on the following clause.",
+      "ex": [
+        {
+          "ko": "후안 씨는 키가 작아도 농구를 잘해요.",
+          "en": "Even though Juan is short, he's good at basketball."
+        },
+        {
+          "ko": "책을 여러 번 읽어도 이해가 안 돼요.",
+          "en": "Even if I read the book several times, I don't understand it."
+        },
+        {
+          "ko": "제가 아무리 매운 것을 잘 먹는 사람이라도 이것은 못 먹겠어요.",
+          "en": "No matter how well I handle spicy food, I can't eat this."
+        }
+      ],
+      "info_ko": "동사, 형용사, '이다'와 결합한다.",
+      "info_en": "Combines with verbs, adjectives, and 이다.",
+      "table": {
+        "head": [
+          "품사",
+          "기본형",
+          "활용"
+        ],
+        "rows": [
+          [
+            "동사 (ㅏ,ㅗ)",
+            "오다",
+            "와도"
+          ],
+          [
+            "동사 (그 외)",
+            "먹다",
+            "먹어도"
+          ],
+          [
+            "동사 (하다)",
+            "공부하다",
+            "공부해도"
+          ],
+          [
+            "형용사 (ㅏ,ㅗ)",
+            "작다",
+            "작아도"
+          ],
+          [
+            "형용사 (그 외)",
+            "길다",
+            "길어도"
+          ],
+          [
+            "형용사 (하다)",
+            "조용하다",
+            "조용해도"
+          ],
+          [
+            "(명사)이다 · 받침 O",
+            "학생",
+            "학생이라도"
+          ],
+          [
+            "(명사)이다 · 받침 X",
+            "의사",
+            "의사라도"
+          ]
+        ]
+      }
+    },
+    {
+      "form": "-잖아(요)",
+      "tag": "you know, as you know (reminding / correcting)",
+      "def_ko": "어떤 상황에 대해 말하는 사람이 상대방에게 확인하거나 정정하듯이 말함을 나타내는 표현.",
+      "def_en": "An expression used when the speaker checks with, reminds, or gently corrects the listener about something they should already know.",
+      "ex": [
+        {
+          "dia": "가:",
+          "ko": "우리 명동에 버스를 타고 갈까?",
+          "en": "Shall we take the bus to Myeongdong?"
+        },
+        {
+          "dia": "나:",
+          "ko": "이 시간에는 길이 많이 막히잖아. 지하철을 타는 게 좋겠어.",
+          "en": "The roads are really congested at this hour, you know. Better to take the subway."
+        },
+        {
+          "dia": "가:",
+          "ko": "오늘도 도서관에 가서 공부할 거예요?",
+          "en": "Are you going to study at the library again today?"
+        },
+        {
+          "dia": "나:",
+          "ko": "네. 다음 주에 시험이 있잖아요.",
+          "en": "Yes. There's an exam next week, you know."
+        },
+        {
+          "dia": "가:",
+          "ko": "우와. 공원에 사람이 정말 많은 것 같아요.",
+          "en": "Wow, there really seem to be a lot of people in the park."
+        },
+        {
+          "dia": "나:",
+          "ko": "오늘은 주말이잖아요. 놀러 나왔겠죠.",
+          "en": "It's the weekend, you know. They've come out to enjoy themselves."
+        }
+      ],
+      "info_ko": "동사, 형용사, '이다'와 결합한다.",
+      "info_en": "Combines with verbs, adjectives, and 이다.",
+      "table": {
+        "head": [
+          "품사",
+          "기본형",
+          "활용"
+        ],
+        "rows": [
+          [
+            "동사",
+            "먹다",
+            "먹잖아"
+          ],
+          [
+            "동사",
+            "오다",
+            "오잖아"
+          ],
+          [
+            "형용사",
+            "작다",
+            "작잖아"
+          ],
+          [
+            "형용사",
+            "크다",
+            "크잖아"
+          ],
+          [
+            "(명사)이다 · 받침 O",
+            "학생",
+            "학생이잖아"
+          ],
+          [
+            "(명사)이다 · 받침 X",
+            "의사",
+            "의사잖아"
+          ]
+        ]
+      }
+    },
+    {
+      "form": "-고 싶어 하다",
+      "tag": "(someone else) wants to",
+      "def_ko": "자신이 아닌 다른 사람이 바라거나 원하는 것을 나타내는 표현.",
+      "def_en": "An expression indicating what someone other than the speaker wants (3rd-person desire).",
+      "ex": [
+        {
+          "ko": "사비나 씨는 한국 전통문화를 체험하고 싶어 해요.",
+          "en": "Sabina wants to experience traditional Korean culture."
+        },
+        {
+          "ko": "대한 씨가 야구를 보고 싶어 해서 야구장에 같이 갈 거예요.",
+          "en": "Daehan wants to watch baseball, so we'll go to the ballpark together."
+        }
+      ],
+      "info_ko": "동사와 결합한다.",
+      "info_en": "Combines with verbs.",
+      "table": {
+        "head": [
+          "기본형",
+          "활용"
+        ],
+        "rows": [
+          [
+            "먹다",
+            "먹고 싶어 하다"
+          ],
+          [
+            "오다",
+            "오고 싶어 하다"
+          ]
+        ]
+      }
+    }
+  ]
+}

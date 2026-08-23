@@ -1,0 +1,327 @@
+{
+  "num": "3과",
+  "lesson": "3",
+  "title": "열심히 노력해야 목표를 이룰 수 있어요",
+  "en": "You can only achieve your goal if you work hard",
+  "vocab": [
+    {
+      "theme": "계획 · Plans",
+      "items": [
+        {
+          "kw": "규칙적",
+          "mean": "regular, systematic",
+          "ex": "앞으로는 좀 더 규칙적으로 생활을 하려고 합니다.",
+          "exen": "From now on I plan to live a more regular life."
+        },
+        {
+          "kw": "미루다",
+          "mean": "to put off, postpone",
+          "ex": "일을 나중으로 미루는 버릇은 고치는 것이 좋습니다.",
+          "exen": "It's good to fix the habit of putting work off until later."
+        },
+        {
+          "kw": "세우다",
+          "mean": "to set up, make (a plan)",
+          "ex": "후안 씨는 자신이 세운 계획을 잘 지켜요.",
+          "exen": "Juan sticks well to the plans he makes."
+        },
+        {
+          "kw": "예정",
+          "mean": "plan, schedule (something set)",
+          "ex": "다음 달에 휴가를 떠날 예정이에요.",
+          "exen": "I'm scheduled to go on vacation next month."
+        },
+        {
+          "kw": "짜다",
+          "mean": "to draw up, put together (a plan)",
+          "ex": "휴가 계획은 다 짰어요?",
+          "exen": "Have you finished putting together your vacation plans?"
+        }
+      ]
+    },
+    {
+      "theme": "바람 · Wishes & hopes",
+      "items": [
+        {
+          "kw": "기대(하다/되다)",
+          "mean": "to expect, look forward to",
+          "ex": "이번 시험의 결과가 정말 기대돼요.",
+          "exen": "I'm really looking forward to the results of this exam."
+        },
+        {
+          "kw": "기도(하다)",
+          "mean": "to pray",
+          "ex": "친구가 하루 빨리 병이 낫기를 신에게 기도했어요.",
+          "exen": "I prayed to God that my friend would recover from illness soon."
+        },
+        {
+          "kw": "목적",
+          "mean": "purpose, aim",
+          "ex": "이 일을 하는 목적이 뭐예요?",
+          "exen": "What is the purpose of doing this work?"
+        },
+        {
+          "kw": "목표",
+          "mean": "goal, target",
+          "ex": "목표를 높게 세우는 일은 중요해요.",
+          "exen": "Setting a high goal is important."
+        },
+        {
+          "kw": "바라다",
+          "mean": "to wish, hope for",
+          "ex": "바라는 것이 모두 이루어졌으면 좋겠네요.",
+          "exen": "I hope everything you wish for comes true."
+        },
+        {
+          "kw": "바람",
+          "mean": "wish, hope",
+          "ex": "가족들과 행복하게 사는 것이 저의 가장 큰 바람입니다.",
+          "exen": "Living happily with my family is my greatest wish."
+        },
+        {
+          "kw": "빌다",
+          "mean": "to wish, pray for",
+          "ex": "올해에는 모두가 건강하시기를 빌어요.",
+          "exen": "I wish everyone good health this year."
+        },
+        {
+          "kw": "소원",
+          "mean": "wish, one's deepest wish",
+          "ex": "배를 타고 여행을 하는 것이 제 소원이에요.",
+          "exen": "Traveling by boat is my wish."
+        },
+        {
+          "kw": "이루다",
+          "mean": "to achieve, fulfill",
+          "ex": "꿈을 이루려면 그에 맞는 노력을 해야 해요.",
+          "exen": "To achieve your dream, you have to make matching effort."
+        },
+        {
+          "kw": "이루어지다",
+          "mean": "to come true, be realized",
+          "ex": "어려워도 계속 노력하면 소원이 이루어질 거예요.",
+          "exen": "Even if it's hard, if you keep trying your wish will come true."
+        },
+        {
+          "kw": "장래",
+          "mean": "future, prospects",
+          "ex": "그 학생의 장래가 기대됩니다.",
+          "exen": "That student's future looks promising."
+        },
+        {
+          "kw": "취직(하다/되다)",
+          "mean": "to get a job, be hired",
+          "ex": "이번에는 꼭 취직을 하면 좋겠습니다.",
+          "exen": "I really hope I get a job this time."
+        },
+        {
+          "kw": "후회(하다)",
+          "mean": "to regret",
+          "ex": "나중에 후회하고 싶지 않아서 열심히 노력하고 있어요.",
+          "exen": "I don't want to regret it later, so I'm working hard."
+        },
+        {
+          "kw": "희망",
+          "mean": "hope",
+          "ex": "어려운 상황에서는 희망을 잃지 않는 용기가 필요해요.",
+          "exen": "In hard situations you need the courage not to lose hope."
+        }
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "form": "-(으)나",
+      "tag": "but, however (formal / written)",
+      "def_ko": "앞에 오는 내용과 뒤에 오는 내용이 서로 다름을 나타내는 연결 어미.",
+      "def_en": "A connective ending indicating that the preceding and following contents differ from each other (a formal, written-style 'but').",
+      "ex": [
+        {
+          "ko": "라면은 맛있으나 건강에는 별로 좋지 않습니다.",
+          "en": "Ramyeon is tasty, but it's not very good for your health."
+        },
+        {
+          "ko": "이 가게의 물건은 가격은 싸나 질이 안 좋습니다.",
+          "en": "The goods at this store are cheap in price, but poor in quality."
+        },
+        {
+          "ko": "저는 직장인이나 동생은 아직 학생입니다.",
+          "en": "I'm a worker, but my younger sibling is still a student."
+        },
+        {
+          "ko": "어제 친구를 만났으나 같이 밥을 먹지는 않았습니다.",
+          "en": "I met my friend yesterday, but we didn't eat together."
+        }
+      ],
+      "info_ko": "동사, 형용사, '이다'와 결합한다.",
+      "info_en": "Combines with verbs, adjectives, and 이다.",
+      "table": {
+        "head": [
+          "품사",
+          "기본형",
+          "활용"
+        ],
+        "rows": [
+          [
+            "동사 · 받침 O",
+            "먹다",
+            "먹으나"
+          ],
+          [
+            "동사 · 받침 X",
+            "오다",
+            "오나"
+          ],
+          [
+            "동사 · 받침 'ㄹ'",
+            "살다",
+            "사나"
+          ],
+          [
+            "형용사 · 받침 O",
+            "작다",
+            "작으나"
+          ],
+          [
+            "형용사 · 받침 X",
+            "크다",
+            "크나"
+          ],
+          [
+            "형용사 · 받침 'ㄹ'",
+            "길다",
+            "기나"
+          ],
+          [
+            "(명사)이다 · 받침 O",
+            "학생",
+            "학생이나"
+          ],
+          [
+            "(명사)이다 · 받침 X",
+            "의사",
+            "의사이나 / 의사나"
+          ]
+        ]
+      }
+    },
+    {
+      "form": "-아/어야",
+      "tag": "only if… / you have to… in order to",
+      "def_ko": "앞의 내용이 뒤의 내용에 대한 필요한 조건임을 나타내는 연결 어미.",
+      "def_en": "A connective ending showing that the preceding clause is a necessary condition for the following clause (\"only if X can Y\").",
+      "ex": [
+        {
+          "ko": "도서관에 일찍 가야 좋은 자리를 잡을 수 있어요.",
+          "en": "You have to go to the library early to get a good seat."
+        },
+        {
+          "ko": "아침을 먹어야 수업 시간에 열심히 공부할 수 있어요.",
+          "en": "You have to eat breakfast to study hard during class."
+        },
+        {
+          "ko": "열심히 노력해야 목표를 이룰 수 있어요.",
+          "en": "You can only achieve your goal if you work hard."
+        },
+        {
+          "ko": "이 놀이 기구는 키가 130cm 이상이어야 탈 수 있어요.",
+          "en": "For this ride, you have to be at least 130cm tall to ride."
+        }
+      ],
+      "info_ko": "동사, 형용사, '이다'와 결합한다.",
+      "info_en": "Combines with verbs, adjectives, and 이다.",
+      "table": {
+        "head": [
+          "품사",
+          "기본형",
+          "활용"
+        ],
+        "rows": [
+          [
+            "동사 (ㅏ,ㅗ)",
+            "오다",
+            "와야"
+          ],
+          [
+            "동사 (그 외)",
+            "먹다",
+            "먹어야"
+          ],
+          [
+            "동사 (하다)",
+            "공부하다",
+            "공부해야"
+          ],
+          [
+            "형용사 (ㅏ,ㅗ)",
+            "작다",
+            "작아야"
+          ],
+          [
+            "형용사 (그 외)",
+            "길다",
+            "길어야"
+          ],
+          [
+            "형용사 (하다)",
+            "조용하다",
+            "조용해야"
+          ],
+          [
+            "(명사)이다 · 받침 O",
+            "학생",
+            "학생이라야"
+          ],
+          [
+            "(명사)이다 · 받침 X",
+            "의사",
+            "의사라야"
+          ]
+        ]
+      }
+    },
+    {
+      "form": "뿐",
+      "tag": "only, nothing but  ·  부가 문법 (Additional grammar)",
+      "extra": true,
+      "def_ko": "앞의 말이 나타내는 내용 이외에 더는 없거나 오직 그러함을 나타내는 조사.",
+      "def_en": "A postposition indicating that there is nothing more than the attached noun — 'only / nothing but' that one thing.",
+      "ex": [
+        {
+          "ko": "정우는 일은 안 하고 휴가 갈 생각뿐이다.",
+          "en": "Jeongwoo doesn't work and thinks of nothing but going on vacation."
+        },
+        {
+          "ko": "이 식당은 메뉴가 한 가지뿐이지만 음식이 아주 맛있어요.",
+          "en": "This restaurant has only one menu item, but the food is really delicious."
+        },
+        {
+          "ko": "이 배우는 연기뿐 아니라 노래도 잘해요.",
+          "en": "This actor is good not only at acting but also at singing."
+        },
+        {
+          "ko": "지수의 대학교 합격 소식을 듣고 가족뿐만 아니라 친구들도 기뻐했어요.",
+          "en": "At the news of Jisu's college acceptance, not only family but friends too were happy."
+        }
+      ],
+      "info_ko": "명사에 붙는다.",
+      "info_en": "Attaches to nouns. (Often used as 뿐(만) 아니라 = 'not only … but also'.)",
+      "table": {
+        "head": [
+          "기본형",
+          "활용"
+        ],
+        "rows": [
+          [
+            "학생",
+            "학생뿐"
+          ],
+          [
+            "의사",
+            "의사뿐"
+          ]
+        ]
+      }
+    }
+  ]
+}

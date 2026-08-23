@@ -1,0 +1,298 @@
+{
+  "num": "5과",
+  "lesson": "5",
+  "title": "우리 팀이 이겨서 정말 신나더라",
+  "en": "Our team won, so it was really exciting!",
+  "vocab": [
+    {
+      "theme": "관람 · Watching & viewing",
+      "items": [
+        {
+          "kw": "관찰(하다)",
+          "mean": "to observe, watch closely",
+          "ex": "꽃이 피는 과정을 자세히 관찰하고 매일 관찰 일기를 썼다.",
+          "exen": "I observed the flowers blooming closely and kept a daily observation journal."
+        },
+        {
+          "kw": "문화재",
+          "mean": "cultural heritage, cultural asset",
+          "ex": "경주는 역사가 오래된 도시라서 문화재가 많다.",
+          "exen": "Gyeongju is an old city, so it has many cultural treasures."
+        },
+        {
+          "kw": "분위기",
+          "mean": "atmosphere, mood",
+          "ex": "방에 꽃이 있으니까 분위기가 환해졌다.",
+          "exen": "With flowers in the room, the atmosphere brightened up."
+        },
+        {
+          "kw": "살펴보다",
+          "mean": "to look closely, examine",
+          "ex": "의사가 환자의 상처를 살펴보았다.",
+          "exen": "The doctor examined the patient's wound."
+        },
+        {
+          "kw": "유물",
+          "mean": "relic, artifact",
+          "ex": "이 박물관에서는 조선 시대의 다양한 유물을 볼 수 있어요.",
+          "exen": "At this museum you can see various Joseon-era artifacts."
+        },
+        {
+          "kw": "유적",
+          "mean": "ruins, historic remains",
+          "ex": "저 공사장에서 500년 전 유적이 발견됐어요.",
+          "exen": "Ruins from 500 years ago were found at that construction site."
+        },
+        {
+          "kw": "유적지",
+          "mean": "historic site",
+          "ex": "이번 여행의 목적은 이 도시에 있는 유적지를 모두 돌아보는 거예요.",
+          "exen": "The purpose of this trip is to visit all the historic sites in this city."
+        },
+        {
+          "kw": "장면",
+          "mean": "scene",
+          "ex": "그 드라마의 마지막 장면은 정말 감동적이었어요.",
+          "exen": "The last scene of that drama was really moving."
+        }
+      ]
+    },
+    {
+      "theme": "감상 · Appreciation",
+      "items": [
+        {
+          "kw": "감상",
+          "mean": "appreciation, enjoying (art/film)",
+          "ex": "제 취미는 영화 감상이에요.",
+          "exen": "My hobby is watching (appreciating) movies."
+        },
+        {
+          "kw": "대중가요",
+          "mean": "popular song, pop music",
+          "ex": "요즘 한국의 대중가요가 세계적으로 인기가 많아요.",
+          "exen": "These days Korean pop songs are hugely popular worldwide."
+        },
+        {
+          "kw": "무용",
+          "mean": "(artistic) dance",
+          "ex": "한국 전통 무용 공연은 춤뿐만 아니라 아름다운 한복을 볼 수 있어서 좋았어요.",
+          "exen": "The traditional Korean dance show was great — not only the dancing but also the beautiful hanbok."
+        },
+        {
+          "kw": "뮤지컬",
+          "mean": "musical",
+          "ex": "뮤지컬 배우는 노래도 잘하고 춤도 잘 춰야 합니다.",
+          "exen": "A musical actor has to sing well and dance well."
+        },
+        {
+          "kw": "신나다",
+          "mean": "to be excited, thrilled",
+          "ex": "바닷가에 간 아이들은 바다에 들어가기도 전에 이미 신난 모습이었다.",
+          "exen": "The kids at the beach looked excited even before getting in the water."
+        },
+        {
+          "kw": "실망(하다)",
+          "mean": "to be disappointed",
+          "ex": "좋아하는 가수의 공연이 취소되어 리사 씨가 크게 실망했다.",
+          "exen": "Lisa was very disappointed when her favorite singer's concert was cancelled."
+        }
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "form": "-니? / -어라 / -자 / -는구나",
+      "tag": "plain-style endings: question / command / suggestion / exclamation",
+      "def_ko": "질문할 때, 명령할 때, 함께 하자고 할 때, 감탄할 때 듣는 사람을 아주 낮추어서 표현하는 종결 어미.",
+      "def_en": "Plain (non-honorific) sentence endings: -니? asks a question, -아/어라 gives a command, -자 suggests doing something together, -는구나 expresses realization or exclamation.",
+      "ex": [
+        {
+          "ko": "수업 끝나고 시간 있니?",
+          "en": "Do you have time after class? (question)"
+        },
+        {
+          "ko": "집에 들어오면 먼저 손부터 씻어라.",
+          "en": "When you come home, wash your hands first. (command)"
+        },
+        {
+          "ko": "넘어지니까 뛰지 마라.",
+          "en": "You'll fall, so don't run. (negative command → -지 마라)"
+        },
+        {
+          "ko": "저녁에 학교 앞 식당에 가서 불고기를 먹자.",
+          "en": "Let's go eat bulgogi at the restaurant tonight. (suggestion)"
+        },
+        {
+          "ko": "리사는 다양한 책을 참 많이 보는구나!",
+          "en": "Wow, Lisa reads so many different books! (exclamation)"
+        }
+      ],
+      "info_ko": "-아/어라, -자는 동사에만. -니?, -는구나는 동사·형용사·'이다'에. 형용사와 '이다'는 명령·청유가 안 됨.",
+      "info_en": "-아/어라 and -자 attach to verbs only. -니? and -는구나 attach to verbs, adjectives, and 이다. Adjectives / 이다 cannot take a command or suggestion (—).",
+      "table": {
+        "head": [
+          "기본형",
+          "-니? (질문)",
+          "-어라 (명령)",
+          "-자 (청유)",
+          "-는구나 (감탄)"
+        ],
+        "rows": [
+          [
+            "먹다 (동사)",
+            "먹니?",
+            "먹어라",
+            "먹자",
+            "먹는구나"
+          ],
+          [
+            "오다 (동사)",
+            "오니?",
+            "와라",
+            "오자",
+            "오는구나"
+          ],
+          [
+            "살다 (동사)",
+            "사니?",
+            "살아라",
+            "살자",
+            "사는구나"
+          ],
+          [
+            "공부하다 (동사)",
+            "공부하니?",
+            "공부해라",
+            "공부하자",
+            "공부하는구나"
+          ],
+          [
+            "작다 (형용사)",
+            "작니?",
+            "—",
+            "—",
+            "작구나"
+          ],
+          [
+            "크다 (형용사)",
+            "크니?",
+            "—",
+            "—",
+            "크구나"
+          ],
+          [
+            "학생이다 (이다)",
+            "학생이니?",
+            "—",
+            "—",
+            "학생이구나"
+          ]
+        ]
+      }
+    },
+    {
+      "form": "-더라 / -더군(요)",
+      "tag": "recalling something you saw or found out",
+      "def_ko": "과거에 직접 경험하거나 알게 된 사실을 지금 전달하거나 그것에 감탄함을 나타내는 종결 어미. '-더군(요)'는 감탄의 느낌이 더 강하고, '요'를 붙이면 높임이 된다.",
+      "def_en": "Plain-style endings for reporting something you personally witnessed or newly discovered in the past. -더라 simply relays it; -더군(요) adds a note of realization or mild surprise; add -요 to make it polite.",
+      "ex": [
+        {
+          "ko": "어제 저 영화를 봤는데 재미있더라.",
+          "en": "I watched that movie yesterday — it was fun! (I saw it myself)"
+        },
+        {
+          "ko": "미카 씨가 불고기를 잘 먹더라.",
+          "en": "Mika ate bulgogi really well, I noticed."
+        },
+        {
+          "ko": "저 식당의 비빔밥이 아주 맛있더군요.",
+          "en": "That restaurant's bibimbap was really tasty, I found! (polite)"
+        },
+        {
+          "ko": "지훈이가 축구를 매우 잘하더군.",
+          "en": "Jihoon was really good at soccer, I saw!"
+        }
+      ],
+      "info_ko": "동사, 형용사, '이다'와 결합한다.",
+      "info_en": "Combines with verbs, adjectives, and 이다.",
+      "table": {
+        "head": [
+          "기본형",
+          "-더라",
+          "-더군(요)"
+        ],
+        "rows": [
+          [
+            "먹다",
+            "먹더라",
+            "먹더군(요)"
+          ],
+          [
+            "오다",
+            "오더라",
+            "오더군(요)"
+          ],
+          [
+            "작다",
+            "작더라",
+            "작더군(요)"
+          ],
+          [
+            "크다",
+            "크더라",
+            "크더군(요)"
+          ],
+          [
+            "학생이다",
+            "학생이더라",
+            "학생이더군(요)"
+          ],
+          [
+            "의사이다",
+            "의사더라",
+            "의사더군(요)"
+          ]
+        ]
+      }
+    },
+    {
+      "form": "-다가",
+      "tag": "while doing… (then something else)  ·  부가 문법 (Additional grammar)",
+      "extra": true,
+      "def_ko": "앞의 행동이 진행되는 중에 뒤의 일이 일어남을 나타내는 연결 어미.",
+      "def_en": "A connective ending showing that a second action or event begins in the middle of the first — 'while ~ing, (then) …'. The first action is often interrupted or switched.",
+      "ex": [
+        {
+          "ko": "잠을 자다가 무서운 꿈을 꿨어요.",
+          "en": "While I was sleeping, I had a scary dream."
+        },
+        {
+          "ko": "밥을 먹다가 실수로 혀를 깨물었어요.",
+          "en": "While eating, I accidentally bit my tongue."
+        },
+        {
+          "ko": "낙엽을 쓸다가 돈을 주웠어요.",
+          "en": "While sweeping leaves, I picked up some money."
+        }
+      ],
+      "info_ko": "동사와 결합한다.",
+      "info_en": "Combines with verbs.",
+      "table": {
+        "head": [
+          "기본형",
+          "활용"
+        ],
+        "rows": [
+          [
+            "먹다",
+            "먹다가"
+          ],
+          [
+            "오다",
+            "오다가"
+          ]
+        ]
+      }
+    }
+  ]
+}

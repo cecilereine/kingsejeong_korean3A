@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>세종학당 한국어 3A · Grammar & Vocabulary Lookup</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <span class="lvl">INTERMEDIATE · 중급</span>
+    <h1>세종학당 한국어 3A</h1>
+    <p>Grammar &amp; Vocabulary Lookup · 문법과 어휘 찾아보기</p>
+  </header>
+
+  <div class="controls">
+    <input type="text" class="search" id="search" placeholder="🔍  Search Korean or English… (예: 동아리, welcome, -으려면)">
+    <div class="row">
+      <div class="tabs" id="tabs">
+        <button class="tab active" data-lesson="all">All</button>
+        <button class="tab" data-lesson="1">1과</button>
+        <button class="tab" data-lesson="2">2과</button>
+        <button class="tab" data-lesson="3">3과</button>
+        <button class="tab" data-lesson="4">4과</button>
+        <button class="tab" data-lesson="5">5과</button>
+      </div>
+      <label class="toggle"><input type="checkbox" id="enToggle" checked> Show English</label>
+      <button class="fc-btn" id="fcStart">🎴 Flashcards</button>
+    </div>
+    <div class="hint">Tip: click any vocabulary card to flip it and hide the answer.</div>
+    <noscript><div class="hint" style="color:#b45; font-weight:600">Note: search & flashcards need a full browser (Chrome/Safari). The word &amp; grammar list below works everywhere.</div></noscript>
+  </div>
+
+  <div id="content"></div>
+
+  <footer>Source: 세종학당 한국어 3A (King Sejong Institute) · Lessons 1–2</footer>
+</div>
+
+<!-- Flashcard review overlay -->
+<div class="overlay" id="overlay">
+  <div class="fc-panel">
+    <div class="fc-top">
+      <span class="meta" id="fcMeta">Flashcards</span>
+      <button class="fc-close" id="fcClose">&times;</button>
+    </div>
+    <div class="fc-scope" id="fcScope">
+      <button data-scope="all" class="on">All</button>
+      <button data-scope="1">1과</button>
+      <button data-scope="2">2과</button>
+      <button data-scope="3">3과</button>
+      <button data-scope="4">4과</button>
+      <button data-scope="5">5과</button>
+    </div>
+    <div class="fc-progress"><span id="fcBar"></span></div>
+    <div id="fcBody"></div>
+    <div class="fc-mark" id="fcMark">
+      <button class="unlearn" id="fcUnlearn">↩ Still learning</button>
+      <button class="learn" id="fcLearn">✓ Got it — learned</button>
+    </div>
+    <div class="fc-controls" id="fcControls">
+      <button class="prev" id="fcPrev">← Prev</button>
+      <button class="flip" id="fcFlip">Flip</button>
+      <button class="next" id="fcNext">Next →</button>
+    </div>
+    <label class="fc-inc"><input type="checkbox" id="fcInclude"> Include cards I've already learned</label>
+    <div class="fc-tools">
+      <button id="fcShuffle">🔀 Shuffle</button>
+      <button id="fcDir">한 → EN</button>
+      <button id="fcReset">🗑 Reset progress</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
