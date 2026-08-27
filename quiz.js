@@ -87,6 +87,7 @@ let score = 0;
 let answered = false;
 let scope = 'all';
 let direction = 'ko';
+let results = [];          // one entry per answered question, for the end-of-quiz summary
 
 const shuffle = items => {
   for (let i = items.length - 1; i > 0; i--) {
@@ -102,6 +103,7 @@ function startQuiz() {
   questions = shuffle(cardsInScope(scope));
   qIdx = 0;
   score = 0;
+  results = [];
   overlay.classList.add('on');
   renderQuestion();
 }
@@ -111,7 +113,10 @@ function setStage(stage) {          // 'asking' | 'answered' | 'done'
   qSkipBtn.classList.toggle('hidden', stage !== 'asking');
   qNextBtn.classList.toggle('hidden', stage !== 'answered');
   qInput.classList.toggle('hidden', stage === 'done');
-  qInput.disabled = stage !== 'asking';
+  // readOnly rather than disabled: a disabled input fires no keydown, and Enter
+  // needs to keep working here to move to the next question.
+  qInput.readOnly = stage !== 'asking';
+  qInput.classList.toggle('locked', stage !== 'asking');
 }
 
 function renderQuestion() {
@@ -124,10 +129,10 @@ function renderQuestion() {
     qPrompt.innerHTML =
       `<div class="qz-done">
          <h3>${perfect ? '🎉 Perfect!' : 'Quiz complete'}</h3>
-         <p>You got ${score} of ${total} right.</p>
+         <p>You got ${score} of ${results.length} right.</p>
        </div>`;
     qFeedback.className = 'qz-feedback';
-    qFeedback.textContent = '';
+    qFeedback.innerHTML = renderSummary();
     setStage('done');
     return;
   }
@@ -152,6 +157,38 @@ function renderQuestion() {
   qInput.focus();
 }
 
+/* End-of-quiz review: every question in the order asked, marked right or wrong,
+   with what was typed whenever it didn't count. */
+function renderSummary() {
+  if (!results.length) return '';
+
+  const rows = results.map(({ card, typed, correct, skipped }) => {
+    const mark = correct ? '✓' : skipped ? '–' : '✗';
+    const note = correct
+      ? ''
+      : skipped
+        ? '<span class="qz-row-note">skipped</span>'
+        : `<span class="qz-row-note">you wrote “${esc(typed)}”</span>`;
+
+    return `
+      <li class="qz-row ${correct ? 'ok' : 'no'}">
+        <span class="qz-row-mark">${mark}</span>
+        <span class="qz-row-body">
+          <span class="qz-row-kw">${esc(card.kw)}</span>
+          <span class="qz-row-mean">${esc(card.mean)}</span>
+          ${note}
+        </span>
+      </li>`;
+  }).join('');
+
+  const missed = results.filter(entry => !entry.correct).length;
+  return `
+    <div class="qz-summary">
+      <div class="qz-summary-head">Review · ${score} right, ${missed} to work on</div>
+      <ul class="qz-list">${rows}</ul>
+    </div>`;
+}
+
 /* Shows the full written meaning plus the example sentence, so a wrong answer
    still teaches something. */
 function revealAnswer(card) {
@@ -168,6 +205,7 @@ function checkAnswer() {
   const card = questions[qIdx];
   const correct = isCorrect(typed, answersFor(card, direction));
   if (correct) score++;
+  results.push({ card, typed, correct, skipped: false });
 
   answered = true;
   qFeedback.className = `qz-feedback ${correct ? 'right' : 'wrong'}`;
@@ -177,17 +215,19 @@ function checkAnswer() {
 
   qMeta.textContent = `${card.lesson} · ${qIdx + 1}/${questions.length} · score ${score}`;
   setStage('answered');
-  qNextBtn.focus();
+  qInput.focus();          // stay in the input so Enter moves on without reaching for the mouse
 }
 
 function skipQuestion() {
   if (answered) return;
   const card = questions[qIdx];
+  results.push({ card, typed: '', correct: false, skipped: true });
+
   answered = true;
   qFeedback.className = 'qz-feedback wrong';
   qFeedback.innerHTML = `<div class="qz-verdict">Skipped</div>${revealAnswer(card)}`;
   setStage('answered');
-  qNextBtn.focus();
+  qInput.focus();
 }
 
 function nextQuestion() {
@@ -224,15 +264,24 @@ qDirBtn.addEventListener('click', () => {
   startQuiz();
 });
 
-// Enter checks the answer, then Enter again moves on.
+/* Enter checks, then Enter again moves on. Handled in one place and stopped from
+   bubbling — letting the same keypress reach the document handler too would check
+   and advance at once, hiding the feedback. */
 qInput.addEventListener('keydown', event => {
-  if (event.key === 'Enter') { event.preventDefault(); checkAnswer(); }
+  if (event.key !== 'Enter') return;
+  event.preventDefault();
+  event.stopPropagation();
+  if (answered) nextQuestion(); else checkAnswer();
 });
 
 document.addEventListener('keydown', event => {
   if (!overlay.classList.contains('on')) return;
-  if (event.key === 'Escape') overlay.classList.remove('on');
-  else if (event.key === 'Enter' && answered) { event.preventDefault(); nextQuestion(); }
+  if (event.key === 'Escape') { overlay.classList.remove('on'); return; }
+  // Fallback for when focus has left the input; the input handles its own Enter.
+  if (event.key === 'Enter' && event.target !== qInput) {
+    event.preventDefault();
+    if (answered) nextQuestion(); else checkAnswer();
+  }
 });
 
 })();

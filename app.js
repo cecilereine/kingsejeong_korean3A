@@ -118,11 +118,16 @@ function render() {
     '<div class="noresult hidden" id="noresult">No matches found. Try another word.</div>';
 }
 
+/* This script is loaded as app.js?v=N. Reusing that same query on the lesson
+   fetches means one version bump in index.html also busts the cached JSON —
+   otherwise newly added words can stay hidden behind a cached lesson file. */
+const ASSET_VERSION = new URL(document.currentScript.src).search;
+
 async function loadLessons() {
   try {
-    const manifest = await fetch('lessons/manifest.json').then(response => response.json());
+    const manifest = await fetch(`lessons/manifest.json${ASSET_VERSION}`).then(response => response.json());
     LESSONS = await Promise.all(
-      manifest.map(file => fetch(`lessons/${file}`).then(response => response.json()))
+      manifest.map(file => fetch(`lessons/${file}${ASSET_VERSION}`).then(response => response.json()))
     );
     render();
     refreshBadges();

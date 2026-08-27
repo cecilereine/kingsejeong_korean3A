@@ -213,6 +213,26 @@
   .qz-done{padding:10px}
   .qz-done h3{margin:0 0 6px;font-size:20px}
   .qz-done p{color:var(--muted);margin:0}
+  .qz-input.locked{background:var(--chip);color:var(--muted)}
+
+  /* end-of-quiz review list */
+  .qz-summary-head{
+    font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:8px;
+  }
+  .qz-list{list-style:none;margin:0;padding:0;max-height:260px;overflow-y:auto}
+  .qz-row{
+    display:flex;gap:10px;align-items:flex-start;
+    padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px;
+  }
+  .qz-row:last-child{border-bottom:none}
+  .qz-row-mark{font-weight:800;line-height:1.4;flex:0 0 16px;text-align:center}
+  .qz-row.ok .qz-row-mark{color:var(--magenta-deep)}
+  .qz-row.no .qz-row-mark{color:var(--apricot-deep)}
+  .qz-row-body{display:flex;flex-direction:column;min-width:0}
+  .qz-row-kw{font-weight:700}
+  .qz-row-mean{color:var(--muted);font-size:13px}
+  .qz-row-note{color:var(--apricot-deep);font-size:12px;margin-top:2px}
 
   /* in-place flip: hide the answer until clicked */
   .vcard{cursor:pointer;position:relative;transition:.15s}

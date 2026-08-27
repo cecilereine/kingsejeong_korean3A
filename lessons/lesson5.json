@@ -95,6 +95,48 @@
           "mean": "to be disappointed",
           "ex": "좋아하는 가수의 공연이 취소되어 리사 씨가 크게 실망했다.",
           "exen": "Lisa was very disappointed when her favorite singer's concert was cancelled."
+        },
+        {
+          "kw": "(돈이) 아깝다",
+          "mean": "to be a waste (of money); to feel it wasn't worth it",
+          "ex": "새로 산 구두의 품질이 나빠서 돈이 아까웠다.",
+          "exen": "The new shoes were poor quality, so I felt the money was wasted."
+        },
+        {
+          "kw": "졸다",
+          "mean": "to doze off, nod off",
+          "ex": "너무 피곤해서 버스에서 졸았어요.",
+          "exen": "I was so tired that I dozed off on the bus."
+        },
+        {
+          "kw": "졸리다",
+          "mean": "to feel sleepy, drowsy",
+          "ex": "어제 잠을 제대로 못 자서 지금 너무 졸려요.",
+          "exen": "I didn't sleep well yesterday, so I'm really sleepy now."
+        },
+        {
+          "kw": "주제",
+          "mean": "theme, subject",
+          "ex": "이 영화의 주제는 가족들의 사랑입니다.",
+          "exen": "The theme of this movie is family love."
+        },
+        {
+          "kw": "클래식",
+          "mean": "classical music",
+          "ex": "나는 조용한 클래식 음악을 들으면 잠이 온다.",
+          "exen": "When I listen to quiet classical music, I get sleepy."
+        },
+        {
+          "kw": "환상적",
+          "mean": "fantastic, magical, dreamlike",
+          "ex": "그 뮤지컬은 무대는 물론이고 배우들의 노래와 춤도 정말 환상적이었다.",
+          "exen": "That musical was truly fantastic — the stage, and the actors' singing and dancing too."
+        },
+        {
+          "kw": "흥미롭다",
+          "mean": "to be interesting, fascinating",
+          "ex": "책의 내용이 흥미로워서 밤을 새워 다 읽었다.",
+          "exen": "The book was so interesting that I stayed up all night finishing it."
         }
       ]
     }
