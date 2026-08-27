@@ -1,300 +1,465 @@
+/* =============================================================
+   세종학당 한국어 3A — grammar & vocabulary lookup
+
+   Data shape (lessons/lessonN.json, listed in lessons/manifest.json):
+     lesson.lesson  → tab id, e.g. "1"     (matched against the tab buttons)
+     lesson.num     → display label, e.g. "1과"
+     lesson.vocab   → [{ theme, items: [{ kw, mean, ex, exen }] }]
+     lesson.grammar → [{ form, tag, def_ko, def_en, info_en, ex, table, table2? }]
+   ============================================================= */
+
 let LESSONS = [];
 
-/* ---------- RENDER ---------- */
-const content=document.getElementById('content');
+const $  = (selector, root = document) => root.querySelector(selector);
+const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
-function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+/* Escapes text for both HTML bodies and quoted attributes. Coerces first so a
+   missing or numeric JSON field can't throw. */
+const HTML_ENTITIES = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => HTML_ENTITIES[ch]);
 
-function render(){
-  content.innerHTML = LESSONS.map(L=>`
-    <section class="lesson" data-lesson="${L.lesson}">
+const escapeRegExp = text => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+/* ---------- rendering ---------- */
+const content = $('#content');
+
+/* The searchable haystack for a card, lowercased and stored in data-search. */
+const searchText = (...parts) => parts.join(' ').toLowerCase();
+
+function renderVocabCard(item, lesson) {
+  return `
+    <div class="vcard"
+         data-id="${esc(`${lesson.num}|${item.kw}`)}"
+         data-search="${esc(searchText(item.kw, item.mean, item.ex, item.exen))}">
+      <span class="learned-badge" title="Learned">✓</span>
+      <div class="kw">${esc(item.kw)}</div>
+      <div class="mean">${esc(item.mean)}</div>
+      <div class="ex">${esc(item.ex)}<span class="exen">${esc(item.exen)}</span></div>
+    </div>`;
+}
+
+function renderVocabGroup(group, lesson) {
+  return `
+    <div class="theme">${esc(group.theme)}</div>
+    <div class="grid">${group.items.map(item => renderVocabCard(item, lesson)).join('')}</div>`;
+}
+
+/* Conjugation tables differ only in which cells are highlighted as the result. */
+const LAST_COLUMN  = (index, row) => index === row.length - 1;
+const AFTER_FIRST  = index => index > 0;
+
+function renderTable(table, isResultCell) {
+  const head = table.head.map(heading => `<th>${esc(heading)}</th>`).join('');
+  const rows = table.rows.map(row => {
+    const cells = row
+      .map((cell, index) => `<td class="${isResultCell(index, row) ? 'res' : ''}">${esc(cell)}</td>`)
+      .join('');
+    return `<tr>${cells}</tr>`;
+  }).join('');
+
+  return `<div class="table-wrap"><table class="conj"><tr>${head}</tr>${rows}</table></div>`;
+}
+
+function renderGrammarCard(entry) {
+  const examples = entry.ex.map(example => `
+    <li>
+      ${example.dia ? `<span class="dia">${esc(example.dia)}</span> ` : ''}${esc(example.ko)}
+      <span class="exen">${esc(example.en)}</span>
+    </li>`).join('');
+
+  const secondTable = entry.table2
+    ? `<div class="lbl">${esc(entry.table2.caption)}</div>${renderTable(entry.table2, AFTER_FIRST)}`
+    : '';
+
+  return `
+    <div class="gcard ${entry.extra ? 'extra' : ''}"
+         data-search="${esc(searchText(
+           entry.form, entry.tag, entry.def_ko, entry.def_en,
+           entry.ex.map(example => `${example.ko} ${example.en}`).join(' ')
+         ))}">
+      <span class="form">${esc(entry.form)}</span>
+      <div class="tagline">${esc(entry.tag)}</div>
+
+      <div class="lbl def">정의 · Definition</div>
+      <div class="def-txt">
+        <span class="ko">${esc(entry.def_ko)}</span>
+        <span class="en">${esc(entry.def_en)}</span>
+      </div>
+
+      <div class="lbl">예시 · Examples</div>
+      <ul class="ex-list">${examples}</ul>
+
+      <div class="lbl">정보 · Form <span class="lbl-note">— ${esc(entry.info_en)}</span></div>
+      ${renderTable(entry.table, LAST_COLUMN)}
+      ${secondTable}
+    </div>`;
+}
+
+function renderLesson(lesson) {
+  return `
+    <section class="lesson" data-lesson="${esc(lesson.lesson)}">
       <div class="lesson-head">
-        <span class="num">${L.num}</span>
-        <h2>${esc(L.title)}</h2>
-        <span class="en">${esc(L.en)}</span>
+        <span class="num">${esc(lesson.num)}</span>
+        <h2>${esc(lesson.title)}</h2>
+        <span class="en">${esc(lesson.en)}</span>
       </div>
 
       <div class="block-title"><span class="dot v"></span>어휘 · Vocabulary</div>
-      ${L.vocab.map(g=>`
-        <div class="theme">${esc(g.theme)}</div>
-        <div class="grid">
-          ${g.items.map(v=>`
-            <div class="vcard" data-id="${esc(L.num+'|'+v.kw)}" data-search="${esc((v.kw+' '+v.mean+' '+v.ex+' '+v.exen).toLowerCase())}">
-              <span class="learned-badge" title="Learned">✓</span>
-              <div class="kw">${esc(v.kw)}</div>
-              <div class="mean">${esc(v.mean)}</div>
-              <div class="ex">${esc(v.ex)}<span class="exen">${esc(v.exen)}</span></div>
-            </div>`).join('')}
-        </div>`).join('')}
+      ${lesson.vocab.map(group => renderVocabGroup(group, lesson)).join('')}
 
       <div class="block-title"><span class="dot g"></span>문법 · Grammar</div>
-      ${L.grammar.map(gr=>`
-        <div class="gcard ${gr.extra?'extra':''}" data-search="${esc((gr.form+' '+gr.tag+' '+gr.def_ko+' '+gr.def_en+' '+gr.ex.map(e=>e.ko+' '+e.en).join(' ')).toLowerCase())}">
-          <span class="form">${esc(gr.form)}</span>
-          <div class="tagline">${esc(gr.tag)}</div>
-          <div class="lbl def">정의 · Definition</div>
-          <div class="def-txt"><span class="ko">${esc(gr.def_ko)}</span><span class="en">${esc(gr.def_en)}</span></div>
-          <div class="lbl">예시 · Examples</div>
-          <ul class="ex-list">
-            ${gr.ex.map(e=>`<li>${e.dia?`<span class="dia">${esc(e.dia)}</span> `:''}${esc(e.ko)}<span class="exen">${esc(e.en)}</span></li>`).join('')}
-          </ul>
-          <div class="lbl">정보 · Form <span style="font-weight:400;text-transform:none;opacity:.85">— ${esc(gr.info_en)}</span></div>
-          <div style="overflow-x:auto"><table class="conj">
-            <tr>${gr.table.head.map(h=>`<th>${esc(h)}</th>`).join('')}</tr>
-            ${gr.table.rows.map(r=>`<tr>${r.map((c,i)=>`<td class="${i===r.length-1?'res':''}">${esc(c)}</td>`).join('')}</tr>`).join('')}
-          </table></div>
-          ${gr.table2?`<div class="lbl">${esc(gr.table2.caption)}</div>
-          <div style="overflow-x:auto"><table class="conj">
-            <tr>${gr.table2.head.map(hh=>`<th>${esc(hh)}</th>`).join('')}</tr>
-            ${gr.table2.rows.map(r=>`<tr>${r.map((c,i)=>`<td class="${i===0?'':'res'}">${esc(c)}</td>`).join('')}</tr>`).join('')}
-          </table></div>`:''}
-        </div>`).join('')}
-    </section>`).join('') + `<div class="noresult hidden" id="noresult">No matches found. Try another word.</div>`;
+      ${lesson.grammar.map(renderGrammarCard).join('')}
+    </section>`;
 }
-// load lesson data from per-lesson JSON files listed in lessons/manifest.json
-fetch('lessons/manifest.json')
-  .then(function(r){ return r.json(); })
-  .then(function(files){ return Promise.all(files.map(function(f){ return fetch('lessons/' + f).then(function(r){ return r.json(); }); })); })
-  .then(function(arr){ LESSONS = arr; render(); refreshBadges(); })
-  .catch(function(){ content.innerHTML = "<p style='padding:24px;color:#b45'>Couldn't load the lesson files. Open this page from a web server (like GitHub Pages) instead of double-clicking the file.</p>"; });
 
-/* ---------- INTERACTIONS ---------- */
-const search=document.getElementById('search');
-const tabs=document.getElementById('tabs');
-const enToggle=document.getElementById('enToggle');
-let activeLesson='all';
+function render() {
+  content.innerHTML =
+    LESSONS.map(renderLesson).join('') +
+    '<div class="noresult hidden" id="noresult">No matches found. Try another word.</div>';
+}
 
-tabs.addEventListener('click',e=>{
-  if(!e.target.classList.contains('tab'))return;
-  tabs.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  e.target.classList.add('active');
-  activeLesson=e.target.dataset.lesson;
-  applyFilters();
-});
+async function loadLessons() {
+  try {
+    const manifest = await fetch('lessons/manifest.json').then(response => response.json());
+    LESSONS = await Promise.all(
+      manifest.map(file => fetch(`lessons/${file}`).then(response => response.json()))
+    );
+    render();
+    refreshBadges();
+    document.dispatchEvent(new CustomEvent('lessons:loaded'));
+  } catch (error) {
+    console.error('Lesson data failed to load:', error);
+    content.innerHTML =
+      `<p class="load-error">Couldn't load the lesson files. Open this page from a web
+       server (like GitHub Pages) instead of double-clicking the file.</p>`;
+  }
+}
 
-enToggle.addEventListener('change',()=>{
-  document.querySelector('.wrap').classList.toggle('en-hide',!enToggle.checked);
-});
+/* ---------- search & lesson filtering ---------- */
+const search   = $('#search');
+const tabs     = $('#tabs');
+const enToggle = $('#enToggle');
+let activeLesson = 'all';
 
-search.addEventListener('input',applyFilters);
+function applyFilters() {
+  const query = search.value.trim().toLowerCase();
+  let anyVisible = false;
 
-// in-place flip: click a vocab card to hide/reveal its answer
-content.addEventListener('click',e=>{
-  const card=e.target.closest('.vcard');
-  if(card) card.classList.toggle('flip');
-});
-
-function applyFilters(){
-  const q=search.value.trim().toLowerCase();
-  let anyVisible=false;
-  document.querySelectorAll('section.lesson').forEach(sec=>{
-    const lessonMatch = activeLesson==='all' || sec.dataset.lesson===activeLesson;
-    if(!lessonMatch){
-      sec.classList.add('hidden');return;
+  $$('section.lesson').forEach(section => {
+    if (activeLesson !== 'all' && section.dataset.lesson !== activeLesson) {
+      section.classList.add('hidden');
+      return;
     }
-    let secHas=false;
-    sec.querySelectorAll('[data-search]').forEach(card=>{
-      const hit = !q || card.dataset.search.includes(q);
-      card.classList.toggle('hidden',!hit);
-      if(hit)secHas=true;
+
+    let sectionHasMatch = false;
+    $$('[data-search]', section).forEach(card => {
+      const hit = !query || card.dataset.search.includes(query);
+      card.classList.toggle('hidden', !hit);
+      if (hit) sectionHasMatch = true;
     });
-    sec.querySelectorAll('.grid').forEach(grid=>{
-      const visible=[...grid.querySelectorAll('.vcard')].some(c=>!c.classList.contains('hidden'));
-      grid.classList.toggle('hidden',!visible);
-      const theme=grid.previousElementSibling;
-      if(theme&&theme.classList.contains('theme'))theme.classList.toggle('hidden',!visible);
+
+    // Hide a theme heading and its grid together once every card inside is filtered out.
+    $$('.grid', section).forEach(grid => {
+      const hasVisibleCard = $$('.vcard', grid).some(card => !card.classList.contains('hidden'));
+      grid.classList.toggle('hidden', !hasVisibleCard);
+      const heading = grid.previousElementSibling;
+      if (heading?.classList.contains('theme')) heading.classList.toggle('hidden', !hasVisibleCard);
     });
-    sec.classList.toggle('hidden',!secHas);
-    if(secHas)anyVisible=true;
+
+    section.classList.toggle('hidden', !sectionHasMatch);
+    if (sectionHasMatch) anyVisible = true;
   });
-  const nr=document.getElementById('noresult');
-  if(nr)nr.classList.toggle('hidden',anyVisible);
-  highlight(q);
+
+  $('#noresult')?.classList.toggle('hidden', anyVisible);
+  highlight(query);
 }
 
-function highlight(q){
-  document.querySelectorAll('mark').forEach(m=>{
-    m.replaceWith(document.createTextNode(m.textContent));
-  });
-  if(!q)return;
-  const rx=new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
-  document.querySelectorAll('.vcard:not(.hidden), .gcard:not(.hidden)').forEach(card=>{
-    walk(card,rx);
-  });
+function highlight(query) {
+  // Unwrap previous highlights before re-marking.
+  $$('mark').forEach(mark => mark.replaceWith(document.createTextNode(mark.textContent)));
+  if (!query) return;
+
+  const matcher = new RegExp(`(${escapeRegExp(query)})`, 'gi');
+  $$('.vcard:not(.hidden), .gcard:not(.hidden)').forEach(card => markMatches(card, matcher));
 }
-function walk(node,rx){
-  for(const child of [...node.childNodes]){
-    if(child.nodeType===3){
-      if(rx.test(child.textContent)){
-        const span=document.createElement('span');
-        span.innerHTML=child.textContent.replace(rx,'<mark>$1</mark>');
-        child.replaceWith(...span.childNodes);
-      }
-    }else if(child.nodeType===1 && child.tagName!=='MARK' && child.tagName!=='TABLE'){
-      walk(child,rx);
+
+function markMatches(node, matcher) {
+  for (const child of [...node.childNodes]) {
+    if (child.nodeType === Node.TEXT_NODE) {
+      // String.replace restarts each call, unlike RegExp.test, whose lastIndex
+      // would carry between sibling nodes and skip matches.
+      const marked = child.textContent.replace(matcher, '<mark>$1</mark>');
+      if (marked === child.textContent) continue;
+      const holder = document.createElement('span');
+      holder.innerHTML = marked;
+      child.replaceWith(...holder.childNodes);
+    } else if (child.nodeType === Node.ELEMENT_NODE && !['MARK', 'TABLE'].includes(child.tagName)) {
+      markMatches(child, matcher);
     }
   }
 }
 
-/* ---------- FLASHCARD REVIEW ---------- */
-const overlay=document.getElementById('overlay');
-const fcBody=document.getElementById('fcBody');
-const fcMeta=document.getElementById('fcMeta');
-const fcControls=document.getElementById('fcControls');
-const fcPrevBtn=document.getElementById('fcPrev');
-const fcNextBtn=document.getElementById('fcNext');
-const fcFlipBtn=document.getElementById('fcFlip');
-const fcDirBtn=document.getElementById('fcDir');
-const fcLearnBtn=document.getElementById('fcLearn');
-const fcUnlearnBtn=document.getElementById('fcUnlearn');
-const fcIncludeChk=document.getElementById('fcInclude');
-const fcBar=document.getElementById('fcBar');
-const fcMark=document.getElementById('fcMark');
+/* ---------- flashcard review ---------- */
+const overlay      = $('#overlay');
+const fcBody       = $('#fcBody');
+const fcMeta       = $('#fcMeta');
+const fcControls   = $('#fcControls');
+const fcMark       = $('#fcMark');
+const fcBar        = $('#fcBar');
+const fcPrevBtn    = $('#fcPrev');
+const fcNextBtn    = $('#fcNext');
+const fcFlipBtn    = $('#fcFlip');
+const fcDirBtn     = $('#fcDir');
+const fcLearnBtn   = $('#fcLearn');
+const fcUnlearnBtn = $('#fcUnlearn');
+const fcIncludeChk = $('#fcInclude');
 
-let deck=[], idx=0, showBack=false, scope='all', dir='ko'; // dir: 'ko' Korean first, 'en' English first
+let deck = [];
+let idx = 0;
+let showBack = false;
+let scope = 'all';
+let dir = 'ko';                 // 'ko' = Korean side first, 'en' = English side first
 
-/* ----- learned progress (saved in the browser) ----- */
-const LS_KEY='ksi3a_learned';
-let learned=loadLearned();
-function loadLearned(){
-  try{ return new Set(JSON.parse(localStorage.getItem(LS_KEY)||'[]')); }
-  catch(e){ return new Set(); }
+/* ----- learned progress, persisted in the browser ----- */
+const LS_KEY = 'ksi3a_learned';
+let learned = loadLearned();
+
+function loadLearned() {
+  try { return new Set(JSON.parse(localStorage.getItem(LS_KEY) || '[]')); }
+  catch { return new Set(); }
 }
-function saveLearned(){
-  try{ localStorage.setItem(LS_KEY, JSON.stringify([...learned])); }catch(e){}
-}
-const cardId = c => `${c.lesson}|${c.kw}`;
-function isLearned(c){ return learned.has(cardId(c)); }
 
-function refreshBadges(){
-  document.querySelectorAll('.vcard').forEach(el=>{
-    el.classList.toggle('is-learned', learned.has(el.dataset.id));
-  });
+function saveLearned() {
+  try { localStorage.setItem(LS_KEY, JSON.stringify([...learned])); }
+  catch { /* private mode or quota exceeded — progress just won't persist */ }
 }
-refreshBadges();
 
-function buildDeck(sc){
-  const cards=[];
-  LESSONS.forEach(L=>{
-    if(sc!=='all' && L.lesson!==sc) return;
-    L.vocab.forEach(g=>g.items.forEach(v=>{
-      const card={...v, lesson:L.num, theme:g.theme};
-      if(!fcIncludeChk.checked && isLearned(card)) return; // hide learned unless included
-      cards.push(card);
-    }));
-  });
+const cardId    = card => `${card.lesson}|${card.kw}`;
+const isLearned = card => learned.has(cardId(card));
+
+function refreshBadges() {
+  $$('.vcard').forEach(el => el.classList.toggle('is-learned', learned.has(el.dataset.id)));
+}
+
+/* Every vocabulary card in scope, flattened; `lesson` here is the display label
+   so it matches the data-id written by renderVocabCard. */
+function cardsInScope(lessonScope) {
+  return LESSONS
+    .filter(lesson => lessonScope === 'all' || lesson.lesson === lessonScope)
+    .flatMap(lesson => lesson.vocab.flatMap(group =>
+      group.items.map(item => ({ ...item, lesson: lesson.num, theme: group.theme }))
+    ));
+}
+
+/* The review deck: everything in scope, minus learned cards unless included. */
+function buildDeck(lessonScope) {
+  const cards = cardsInScope(lessonScope);
+  return fcIncludeChk.checked ? cards : cards.filter(card => !isLearned(card));
+}
+
+function shuffle(cards) {
+  for (let i = cards.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [cards[i], cards[j]] = [cards[j], cards[i]];
+  }
   return cards;
 }
-function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 
-function startReview(){
-  deck=buildDeck(scope); idx=0; showBack=false;
+function startReview() {
+  deck = buildDeck(scope);
+  idx = 0;
+  showBack = false;
   overlay.classList.add('on');
   renderCard();
 }
-function totalLearnedInScope(){
-  return buildDeckAll(scope).filter(isLearned).length;
-}
-function buildDeckAll(sc){
-  const cards=[];
-  LESSONS.forEach(L=>{
-    if(sc!=='all' && L.lesson!==sc) return;
-    L.vocab.forEach(g=>g.items.forEach(v=>cards.push({...v, lesson:L.num, theme:g.theme})));
-  });
-  return cards;
-}
-function setControls(v){ fcControls.style.visibility=v; fcMark.style.visibility=v; }
 
-function renderCard(){
-  const totalInScope=buildDeckAll(scope).length;
-  const learnedCount=totalLearnedInScope();
-  fcBar.style.width = totalInScope ? (learnedCount/totalInScope*100)+'%' : '0';
+const setControlsVisible = visible => {
+  const value = visible ? 'visible' : 'hidden';
+  fcControls.style.visibility = value;
+  fcMark.style.visibility = value;
+};
 
-  if(deck.length===0){
-    const allLearned = totalInScope>0 && learnedCount===totalInScope;
-    fcBody.innerHTML=`<div class="fc-done"><h3>${allLearned?'🎉 All learned!':'No cards'}</h3><p>${allLearned?'You\'ve marked every card as learned. Reset to review them again.':'No cards in this selection. Try "Include learned" or Reset.'}</p></div>`;
-    fcMeta.textContent=`Learned ${learnedCount} / ${totalInScope}`;
-    setControls('hidden');
+function cardFaces(card) {
+  const korean  = `<div class="side-label">Korean</div><div class="big">${esc(card.kw)}</div>`;
+  const meaning = `<div class="side-label">Meaning</div><div class="mean2">${esc(card.mean)}</div>`;
+  const english = `<div class="side-label">English</div><div class="mean2">${esc(card.mean)}</div>`;
+  const example = spaced =>
+    `<div class="ex2${spaced ? ' spaced' : ''}">${esc(card.ex)}<span class="en2">${esc(card.exen)}</span></div>`;
+
+  return dir === 'ko'
+    ? { front: korean,  back: meaning + example(false) }
+    : { front: english, back: korean + example(true) };
+}
+
+function renderCard() {
+  // One pass over the scope covers both the counter and the progress bar.
+  const scoped = cardsInScope(scope);
+  const total = scoped.length;
+  const learnedCount = scoped.filter(isLearned).length;
+
+  fcBar.style.width = total ? `${(learnedCount / total) * 100}%` : '0';
+
+  const finished = deck.length === 0 || idx >= deck.length;
+  if (finished) {
+    const allLearned = total > 0 && learnedCount === total;
+    const [heading, detail] = deck.length === 0
+      ? allLearned
+        ? ['🎉 All learned!', "You've marked every card as learned. Reset to review them again."]
+        : ['No cards', 'No cards in this selection. Try "Include learned" or Reset.']
+      : ['🎉 Round done!',
+         `You went through ${deck.length} card${deck.length > 1 ? 's' : ''}. Learned ${learnedCount} of ${total} total.`];
+
+    fcBody.innerHTML = `<div class="fc-done"><h3>${heading}</h3><p>${esc(detail)}</p></div>`;
+    fcMeta.textContent = `Learned ${learnedCount} / ${total}`;
+    setControlsVisible(false);
     return;
   }
-  if(idx>=deck.length){
-    fcBody.innerHTML=`<div class="fc-done"><h3>🎉 Round done!</h3><p>You went through ${deck.length} card${deck.length>1?'s':''}. Learned ${learnedCount} of ${totalInScope} total.</p></div>`;
-    fcMeta.textContent=`Learned ${learnedCount} / ${totalInScope}`;
-    setControls('hidden');
-    return;
-  }
-  setControls('visible');
-  const c=deck[idx];
-  const done=isLearned(c);
-  fcMeta.textContent=`${c.lesson} · ${idx+1}/${deck.length} · learned ${learnedCount}/${totalInScope}`;
-  const front = dir==='ko'
-    ? `<div class="side-label">Korean</div><div class="big">${esc(c.kw)}</div>`
-    : `<div class="side-label">English</div><div class="mean2">${esc(c.mean)}</div>`;
-  const back = dir==='ko'
-    ? `<div class="side-label">Meaning</div><div class="mean2">${esc(c.mean)}</div><div class="ex2">${esc(c.ex)}<span class="en2">${esc(c.exen)}</span></div>`
-    : `<div class="side-label">Korean</div><div class="big">${esc(c.kw)}</div><div class="ex2" style="margin-top:12px">${esc(c.ex)}<span class="en2">${esc(c.exen)}</span></div>`;
-  const statusChip = done ? `<div class="fc-status yes">✓ learned</div>` : `<div class="fc-status no">still learning</div>`;
-  fcBody.innerHTML=`<div class="fc-card ${done?'learned-card':''}" id="fcCard">${showBack?back:front}${statusChip}${showBack?'':'<div class="tapflip">tap card to flip</div>'}</div>`;
-  document.getElementById('fcCard').onclick=()=>{showBack=!showBack;renderCard();};
-  fcPrevBtn.disabled = idx===0;
+
+  setControlsVisible(true);
+
+  const card = deck[idx];
+  const done = isLearned(card);
+  const { front, back } = cardFaces(card);
+  const status = done
+    ? '<div class="fc-status yes">✓ learned</div>'
+    : '<div class="fc-status no">still learning</div>';
+  const flipHint = showBack ? '' : '<div class="tapflip">tap card to flip</div>';
+
+  fcMeta.textContent = `${card.lesson} · ${idx + 1}/${deck.length} · learned ${learnedCount}/${total}`;
+  fcBody.innerHTML =
+    `<div class="fc-card ${done ? 'learned-card' : ''}" id="fcCard">
+       ${showBack ? back : front}${status}${flipHint}
+     </div>`;
+  $('#fcCard').addEventListener('click', flipCard);
+
+  fcPrevBtn.disabled = idx === 0;
   fcFlipBtn.textContent = showBack ? 'Hide' : 'Flip';
   fcLearnBtn.textContent = done ? '✓ Learned' : '✓ Got it — learned';
   fcUnlearnBtn.style.display = done ? 'block' : 'none';
 }
 
-function markLearned(){
-  const c=deck[idx]; if(!c) return;
-  learned.add(cardId(c)); saveLearned(); refreshBadges();
-  if(fcIncludeChk.checked){
-    renderCard();                 // keep it in view, just flip status
-  }else{
-    deck.splice(idx,1);           // remove from this round
-    showBack=false; renderCard(); // idx now points to next card
-  }
-}
-function markUnlearned(){
-  const c=deck[idx]; if(!c) return;
-  learned.delete(cardId(c)); saveLearned(); refreshBadges();
+function flipCard() {
+  showBack = !showBack;
   renderCard();
 }
 
-document.getElementById('fcStart').onclick=()=>{
-  scope=activeLesson;
-  document.querySelectorAll('#fcScope button').forEach(x=>x.classList.toggle('on',x.dataset.scope===scope));
-  startReview();
-};
-document.getElementById('fcClose').onclick=()=>overlay.classList.remove('on');
-overlay.addEventListener('click',e=>{ if(e.target===overlay) overlay.classList.remove('on'); });
-fcFlipBtn.onclick=()=>{ showBack=!showBack; renderCard(); };
-fcNextBtn.onclick=()=>{ idx++; showBack=false; renderCard(); };
-fcPrevBtn.onclick=()=>{ if(idx>0){idx--; showBack=false; renderCard();} };
-document.getElementById('fcShuffle').onclick=()=>{ shuffle(deck); idx=0; showBack=false; renderCard(); };
-fcLearnBtn.onclick=markLearned;
-fcUnlearnBtn.onclick=markUnlearned;
-fcIncludeChk.onchange=()=>startReview();   // rebuild deck when toggling learned cards
-document.getElementById('fcReset').onclick=()=>{
-  if(confirm('Reset progress? All cards will go back into the deck.')){
-    learned.clear(); saveLearned(); refreshBadges(); startReview();
+function goToCard(nextIdx) {
+  if (nextIdx < 0) return;
+  idx = nextIdx;
+  showBack = false;
+  renderCard();
+}
+
+function markLearned() {
+  const card = deck[idx];
+  if (!card) return;
+
+  learned.add(cardId(card));
+  saveLearned();
+  refreshBadges();
+
+  if (fcIncludeChk.checked) {
+    renderCard();               // keep the card in view, just flip its status
+  } else {
+    deck.splice(idx, 1);        // drop it from this round; idx now points at the next card
+    showBack = false;
+    renderCard();
   }
-};
-fcDirBtn.onclick=()=>{
-  dir = dir==='ko' ? 'en' : 'ko';
-  fcDirBtn.textContent = dir==='ko' ? '한 → EN' : 'EN → 한';
-  showBack=false; renderCard();
-};
-// scope buttons inside the panel
-document.getElementById('fcScope').addEventListener('click',e=>{
-  const b=e.target.closest('button'); if(!b)return;
-  document.querySelectorAll('#fcScope button').forEach(x=>x.classList.remove('on'));
-  b.classList.add('on');
-  scope=b.dataset.scope;
+}
+
+function markUnlearned() {
+  const card = deck[idx];
+  if (!card) return;
+  learned.delete(cardId(card));
+  saveLearned();
+  refreshBadges();
+  renderCard();
+}
+
+function setScope(nextScope) {
+  scope = nextScope;
+  $$('#fcScope button').forEach(button => button.classList.toggle('on', button.dataset.scope === scope));
+  startReview();
+}
+
+/* ---------- event wiring ---------- */
+tabs.addEventListener('click', event => {
+  if (!event.target.classList.contains('tab')) return;
+  $$('.tab', tabs).forEach(tab => tab.classList.remove('active'));
+  event.target.classList.add('active');
+  activeLesson = event.target.dataset.lesson;
+  applyFilters();
+});
+
+search.addEventListener('input', applyFilters);
+
+enToggle.addEventListener('change', () => {
+  $('.wrap').classList.toggle('en-hide', !enToggle.checked);
+});
+
+// Click a vocabulary card in the list to hide/reveal its answer.
+content.addEventListener('click', event => {
+  event.target.closest('.vcard')?.classList.toggle('flip');
+});
+
+$('#fcStart').addEventListener('click', () => setScope(activeLesson));
+$('#fcScope').addEventListener('click', event => {
+  const button = event.target.closest('button');
+  if (button) setScope(button.dataset.scope);
+});
+
+$('#fcClose').addEventListener('click', () => overlay.classList.remove('on'));
+overlay.addEventListener('click', event => {
+  if (event.target === overlay) overlay.classList.remove('on');
+});
+
+fcFlipBtn.addEventListener('click', flipCard);
+fcNextBtn.addEventListener('click', () => goToCard(idx + 1));
+fcPrevBtn.addEventListener('click', () => goToCard(idx - 1));
+fcLearnBtn.addEventListener('click', markLearned);
+fcUnlearnBtn.addEventListener('click', markUnlearned);
+fcIncludeChk.addEventListener('change', startReview);   // deck contents depend on this
+
+$('#fcShuffle').addEventListener('click', () => {
+  shuffle(deck);
+  goToCard(0);
+});
+
+$('#fcReset').addEventListener('click', () => {
+  if (!confirm('Reset progress? All cards will go back into the deck.')) return;
+  learned.clear();
+  saveLearned();
+  refreshBadges();
   startReview();
 });
-// keyboard: arrows to navigate, space to flip, esc to close
-document.addEventListener('keydown',e=>{
-  if(!overlay.classList.contains('on'))return;
-  if(e.key==='Escape')overlay.classList.remove('on');
-  else if(e.key==='ArrowRight'){idx++;showBack=false;renderCard();}
-  else if(e.key==='ArrowLeft'){if(idx>0){idx--;showBack=false;renderCard();}}
-  else if(e.key===' '){e.preventDefault();showBack=!showBack;renderCard();}
+
+fcDirBtn.addEventListener('click', () => {
+  dir = dir === 'ko' ? 'en' : 'ko';
+  fcDirBtn.textContent = dir === 'ko' ? '한 → EN' : 'EN → 한';
+  showBack = false;
+  renderCard();
 });
+
+// Arrows navigate, space flips, escape closes — only while the overlay is open.
+document.addEventListener('keydown', event => {
+  if (!overlay.classList.contains('on')) return;
+  if (event.key === 'Escape') overlay.classList.remove('on');
+  else if (event.key === 'ArrowRight') goToCard(idx + 1);
+  else if (event.key === 'ArrowLeft') goToCard(idx - 1);
+  else if (event.key === ' ') { event.preventDefault(); flipCard(); }
+});
+
+/* ---------- interface for quiz.js ----------
+   quiz.js is a separate classic script loaded after this one. Everything it may
+   use is listed here explicitly, so the coupling between the two files is a
+   single documented surface rather than a set of incidental globals.
+   `lessons:loaded` fires on document once the lesson JSON has rendered. */
+window.KSI = {
+  esc,
+  $, $$,
+  cardsInScope,               // (scope) => flattened vocabulary cards, learned or not
+  activeLesson: () => activeLesson,
+  isLearned,
+};
+
+loadLessons();

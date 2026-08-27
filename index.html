@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>세종학당 한국어 3A · Grammar & Vocabulary Lookup</title>
-<link rel="stylesheet" href="styles.css">
+<!-- Cache busting: whenever styles.css, app.js or quiz.js changes, bump EVERY ?v=
+     below to the same new number. GitHub Pages sends cache-control: max-age=600,
+     so without this a browser can pair new HTML with a stale script or stylesheet. -->
+<link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 <div class="wrap">
@@ -33,6 +36,7 @@
       </div>
       <label class="toggle"><input type="checkbox" id="enToggle" checked> Show English</label>
       <button class="fc-btn" id="fcStart">🎴 Flashcards</button>
+      <button class="qz-btn" id="qzStart">✏️ Quiz</button>
     </div>
     <div class="hint">Tip: click any vocabulary card to flip it and hide the answer.</div>
     <noscript><div class="hint" style="color:#b45; font-weight:600">Note: search & flashcards need a full browser (Chrome/Safari). The word &amp; grammar list below works everywhere.</div></noscript>
@@ -78,6 +82,41 @@
   </div>
 </div>
 
-<script src="app.js"></script>
+<!-- Typed-answer quiz overlay -->
+<div class="overlay" id="quizOverlay">
+  <div class="fc-panel">
+    <div class="fc-top">
+      <span class="meta" id="qzMeta">Quiz</span>
+      <button class="fc-close" id="qzClose">&times;</button>
+    </div>
+    <div class="fc-scope" id="qzScope">
+      <button data-scope="all" class="on">All</button>
+      <button data-scope="1">1과</button>
+      <button data-scope="2">2과</button>
+      <button data-scope="3">3과</button>
+      <button data-scope="4">4과</button>
+      <button data-scope="5">5과</button>
+    </div>
+    <div class="fc-progress"><span id="qzBar"></span></div>
+
+    <div class="qz-prompt" id="qzPrompt"></div>
+    <input type="text" class="qz-input" id="qzInput" autocomplete="off"
+           autocapitalize="off" autocorrect="off" spellcheck="false">
+    <div class="qz-feedback" id="qzFeedback"></div>
+
+    <div class="qz-controls">
+      <button class="qz-skip" id="qzSkip">Skip</button>
+      <button class="qz-check" id="qzCheck">Check</button>
+      <button class="qz-next hidden" id="qzNext">Next →</button>
+    </div>
+    <div class="fc-tools">
+      <button id="qzDir">한 → EN</button>
+      <button id="qzRestart">🔄 Restart</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js?v=3"></script>
+<script src="quiz.js?v=3"></script>
 </body>
 </html>

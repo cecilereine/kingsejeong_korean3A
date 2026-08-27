@@ -139,6 +139,9 @@
     margin:16px 0 8px;text-transform:uppercase;
   }
   .lbl.def{background:var(--apricot-deep)}
+  .lbl .lbl-note{font-weight:400;text-transform:none;opacity:.85}
+  .table-wrap{overflow-x:auto}
+  .load-error{padding:24px;color:#b45}
   .def-txt{font-size:14px}
   .def-txt .ko{display:block;font-weight:600}
   .def-txt .en{display:block;color:var(--muted);font-size:13px;margin-top:2px}
@@ -163,6 +166,53 @@
   }
   .fc-btn:hover{filter:brightness(1.05)}
   .hint{font-size:12px;color:var(--muted);margin-top:8px;padding-left:4px}
+
+  /* ---------- typed-answer quiz ---------- */
+  .qz-btn{
+    border:none;background:var(--apricot);color:var(--apricot-ink);font-weight:700;font-size:14px;
+    padding:9px 16px;border-radius:20px;cursor:pointer;white-space:nowrap;
+    box-shadow:var(--shadow);transition:.15s;
+  }
+  .qz-btn:hover{filter:brightness(1.05)}
+
+  .qz-prompt{
+    background:#fff;border:1px solid var(--line);border-radius:18px;
+    padding:22px 18px;text-align:center;box-shadow:var(--shadow);min-height:150px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+  }
+  .qz-side{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .qz-word{font-size:30px;font-weight:800;color:var(--magenta-deep);line-height:1.25}
+  .qz-ask{font-size:13px;color:var(--muted);margin-top:12px}
+
+  .qz-input{
+    width:100%;margin-top:12px;padding:13px 16px;font-size:16px;
+    border:1.5px solid var(--line);border-radius:12px;background:#fff;outline:none;
+    font-family:inherit;
+  }
+  .qz-input:focus{border-color:var(--magenta)}
+  .qz-input:disabled{background:var(--chip);color:var(--muted)}
+
+  .qz-feedback{margin-top:10px;font-size:14px;border-radius:12px;padding:0;transition:.15s}
+  .qz-feedback.right,.qz-feedback.wrong{padding:12px 14px}
+  .qz-feedback.right{background:var(--magenta-soft);border:1px solid var(--magenta)}
+  .qz-feedback.wrong{background:var(--apricot-soft);border:1px solid var(--apricot)}
+  .qz-verdict{font-weight:800;margin-bottom:6px}
+  .qz-feedback.right .qz-verdict{color:var(--magenta-deep)}
+  .qz-feedback.wrong .qz-verdict{color:var(--apricot-deep)}
+  .qz-expected{font-size:15px;font-weight:700}
+  .qz-example{font-size:13px;margin-top:8px;padding-top:8px;border-top:1px dashed var(--line)}
+  .qz-example-en{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+
+  .qz-controls{display:flex;gap:8px;margin-top:12px}
+  .qz-controls button{
+    flex:1;border:none;border-radius:12px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;
+  }
+  .qz-check{background:var(--magenta-deep);color:#fff}
+  .qz-next{background:var(--magenta-deep);color:#fff}
+  .qz-skip{background:var(--chip);color:var(--muted);flex:0 0 90px}
+  .qz-done{padding:10px}
+  .qz-done h3{margin:0 0 6px;font-size:20px}
+  .qz-done p{color:var(--muted);margin:0}
 
   /* in-place flip: hide the answer until clicked */
   .vcard{cursor:pointer;position:relative;transition:.15s}
@@ -203,6 +253,7 @@
   .fc-card .big{font-size:34px;font-weight:800;color:var(--magenta-deep)}
   .fc-card .mean2{font-size:20px;font-weight:700;margin-bottom:14px}
   .fc-card .ex2{font-size:15px;line-height:1.55}
+  .fc-card .ex2.spaced{margin-top:12px}
   .fc-card .ex2 .en2{display:block;color:var(--muted);font-size:13px;margin-top:5px}
   .fc-card .tapflip{font-size:12px;color:var(--muted);margin-top:18px}
   .fc-controls{display:flex;gap:8px;margin-top:14px}
