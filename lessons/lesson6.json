@@ -1,0 +1,394 @@
+{
+  "num": "6과",
+  "lesson": "6",
+  "title": "오랜만에 영화를 보니 정말 재미있었어요",
+  "en": "I had fun watching a movie for the first time in a while",
+  "vocab": [
+    {
+      "theme": "취미 · Hobbies",
+      "items": [
+        {
+          "kw": "게임(하다)",
+          "mean": "game; to play games",
+          "ex": "요즘 휴대 전화로 게임을 하는 사람들이 많아요.",
+          "exen": "These days many people play games on their phones."
+        },
+        {
+          "kw": "드라이브",
+          "mean": "a drive (going for a drive)",
+          "ex": "주말에 가족들과 함께 시외로 드라이브를 다녀왔어요.",
+          "exen": "On the weekend I went for a drive out of town with my family."
+        },
+        {
+          "kw": "소설",
+          "mean": "novel, fiction",
+          "ex": "어제 읽은 소설이 정말 재미있었어요.",
+          "exen": "The novel I read yesterday was really interesting."
+        },
+        {
+          "kw": "수집(하다)",
+          "mean": "to collect",
+          "ex": "우리 아버지는 취미로 우표를 수집해요.",
+          "exen": "My father collects stamps as a hobby."
+        },
+        {
+          "kw": "시",
+          "mean": "poem, poetry",
+          "ex": "우리 언니는 외우고 있는 시가 많아요.",
+          "exen": "My older sister has many poems memorized."
+        },
+        {
+          "kw": "에어로빅",
+          "mean": "aerobics",
+          "ex": "저희 어머니는 아침마다 체육관에서 에어로빅을 배우세요.",
+          "exen": "My mother learns aerobics at the gym every morning."
+        },
+        {
+          "kw": "요가",
+          "mean": "yoga",
+          "ex": "요가를 하면 몸과 마음이 모두 건강해져요.",
+          "exen": "When you do yoga, both body and mind become healthy."
+        },
+        {
+          "kw": "자전거",
+          "mean": "bicycle",
+          "ex": "주말마다 자전거 동호회 회원들과 자전거를 타요.",
+          "exen": "Every weekend I ride bikes with the cycling club members."
+        },
+        {
+          "kw": "조깅",
+          "mean": "jogging",
+          "ex": "매일 아침 한강 공원에서 조깅을 해요.",
+          "exen": "I go jogging at Han River Park every morning."
+        },
+        {
+          "kw": "탁구",
+          "mean": "table tennis, ping-pong",
+          "ex": "고등학교 때 수업이 끝난 후에 친구들과 자주 탁구를 쳤다.",
+          "exen": "In high school I often played table tennis with friends after class."
+        }
+      ]
+    },
+    {
+      "theme": "취미 활동 · Hobbyist activities",
+      "items": [
+        {
+          "kw": "문화 센터",
+          "mean": "culture centre (community class venue)",
+          "ex": "어제 아이와 문화 센터에 가서 떡 만들기를 했어요.",
+          "exen": "Yesterday I went to the culture centre with my child and made tteok."
+        },
+        {
+          "kw": "시청(하다)",
+          "mean": "to watch, view (TV/video)",
+          "ex": "우리 가족은 저녁 식사 후에 거실에서 드라마를 시청해요.",
+          "exen": "My family watches dramas in the living room after dinner."
+        },
+        {
+          "kw": "스스로",
+          "mean": "by oneself, on one's own",
+          "ex": "자신의 일을 남에게 미루지 말고 스스로 해라.",
+          "exen": "Don't push your work onto others — do it yourself."
+        },
+        {
+          "kw": "여가 시간",
+          "mean": "leisure time, free time",
+          "ex": "여가 시간에는 책을 읽거나 음악을 들어요.",
+          "exen": "In my leisure time I read books or listen to music."
+        },
+        {
+          "kw": "움직이다",
+          "mean": "to move (one's body)",
+          "ex": "저는 쉬는 날 집에 가만히 있는 것보다 밖에 나가서 몸을 움직이는 것을 좋아해요.",
+          "exen": "On days off I prefer going out and moving my body to staying still at home."
+        },
+        {
+          "kw": "자격증",
+          "mean": "certificate, license (qualification)",
+          "ex": "커피가 좋아서 공부를 시작했다가 바리스타 자격증까지 땄어요.",
+          "exen": "I started studying because I love coffee, and ended up getting a barista certificate."
+        },
+        {
+          "kw": "전문가",
+          "mean": "expert, specialist",
+          "ex": "세종학당 선생님들은 모두 한국어 교육 전문가예요.",
+          "exen": "The King Sejong Institute teachers are all Korean-education experts."
+        },
+        {
+          "kw": "제작(하다)",
+          "mean": "to produce, make (creative work)",
+          "ex": "저는 행사 계획을 짜고 가영 씨는 포스터를 제작했어요.",
+          "exen": "I made the event plan and Gayeong produced the poster."
+        },
+        {
+          "kw": "체험",
+          "mean": "first-hand experience",
+          "ex": "이 글은 작가의 체험을 바탕으로 쓴 글이다.",
+          "exen": "This piece was written based on the author's own experience."
+        },
+        {
+          "kw": "촬영(하다)",
+          "mean": "to film, shoot (photo/video)",
+          "ex": "이 영상은 내가 직접 촬영한 거야.",
+          "exen": "I filmed this video myself."
+        },
+        {
+          "kw": "헬스클럽",
+          "mean": "gym, fitness club",
+          "ex": "우리 동네 헬스클럽에는 여러 가지 운동 기구들이 많습니다.",
+          "exen": "The gym in my neighbourhood has lots of exercise equipment."
+        }
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "form": "-나 보다 / -는가 보다",
+      "tag": "it seems / I guess (conjecture from evidence)",
+      "def_ko": "앞에 오는 말의 내용에 대해 추측함을 나타내는 표현.",
+      "def_en": "An expression showing a guess or conjecture about the preceding content — 'it seems that…', 'I guess…', based on something you observe.",
+      "ex": [
+        {
+          "ko": "리사 씨는 아는 것이 참 많아요. 책을 많이 읽나 봐요.",
+          "en": "Lisa knows so much. I guess she reads a lot."
+        },
+        {
+          "ko": "저 식당은 늘 손님이 많아요. 음식이 맛있나 봐요.",
+          "en": "That restaurant always has lots of customers. The food must be good."
+        },
+        {
+          "ko": "수아가 아까부터 계속 우네요. 배가 고픈가 봐요.",
+          "en": "Sua has been crying for a while. She must be hungry."
+        },
+        {
+          "ko": "예전에 이곳에는 유적이 있었나 봐요.",
+          "en": "It seems there used to be ruins in this place."
+        }
+      ],
+      "info_ko": "동사는 '-나 보다', 형용사는 '-(으)ㄴ가 보다'와 결합한다. 과거는 '-았/었나 보다'.",
+      "info_en": "Verbs take -나 보다; adjectives take -(으)ㄴ가 보다; past tense uses -았/었나 보다 for both.",
+      "table": {
+        "head": [
+          "품사",
+          "기본형",
+          "활용"
+        ],
+        "rows": [
+          [
+            "동사 · 받침 O",
+            "먹다",
+            "먹나 보다"
+          ],
+          [
+            "동사 · 받침 X",
+            "오다",
+            "오나 보다"
+          ],
+          [
+            "동사 · 받침 'ㄹ'",
+            "살다",
+            "사나 보다"
+          ],
+          [
+            "형용사 · 있다/없다",
+            "재미있다",
+            "재미있나 보다"
+          ],
+          [
+            "형용사 · 받침 O",
+            "작다",
+            "작은가 보다"
+          ],
+          [
+            "형용사 · 받침 X",
+            "크다",
+            "큰가 보다"
+          ],
+          [
+            "형용사 · 받침 'ㄹ'",
+            "길다",
+            "긴가 보다"
+          ],
+          [
+            "(명사)이다",
+            "학생",
+            "학생인가 보다"
+          ],
+          [
+            "(명사)이다",
+            "의사",
+            "의사인가 보다 / 의사(이)ㄴ가 보다"
+          ]
+        ]
+      },
+      "table2": {
+        "caption": "과거형 · Past tense (-았/었나 보다) — 동사·형용사 모두 '-나 보다' 형태를 써요",
+        "head": [
+          "기본형",
+          "현재",
+          "과거"
+        ],
+        "rows": [
+          [
+            "오다 (동사)",
+            "오나 보다",
+            "왔나 보다"
+          ],
+          [
+            "먹다 (동사)",
+            "먹나 보다",
+            "먹었나 보다"
+          ],
+          [
+            "공부하다 (동사)",
+            "공부하나 보다",
+            "공부했나 보다"
+          ],
+          [
+            "작다 (형용사)",
+            "작은가 보다",
+            "작았나 보다"
+          ],
+          [
+            "길다 (형용사)",
+            "긴가 보다",
+            "길었나 보다"
+          ],
+          [
+            "조용하다 (형용사)",
+            "조용한가 보다",
+            "조용했나 보다"
+          ],
+          [
+            "학생이다",
+            "학생인가 보다",
+            "학생이었나 보다"
+          ],
+          [
+            "의사이다",
+            "의사인가 보다",
+            "의사였나 보다"
+          ]
+        ]
+      }
+    },
+    {
+      "form": "-(으)니",
+      "tag": "because / when — reason, grounds, or discovery",
+      "def_ko": "앞 절의 내용이 뒤 절의 내용에 대하여 원인이나 근거, 전제가 됨을 나타내는 연결 어미.",
+      "def_en": "A connective ending showing that the first clause is the cause, grounds, or premise for the second — 'because…', or 'when/upon doing…, (I found that)…'.",
+      "ex": [
+        {
+          "ko": "오랜만에 영화를 보니 정말 재미있었다.",
+          "en": "Watching a movie after a long time, it was really fun."
+        },
+        {
+          "ko": "이 음식은 맛이 없으니 다음에는 시키지 말아요.",
+          "en": "This food isn't tasty, so let's not order it next time."
+        },
+        {
+          "ko": "춤을 추면 몸을 많이 움직이게 되니 건강에 좋아요.",
+          "en": "When you dance you move your body a lot, so it's good for your health."
+        }
+      ],
+      "info_ko": "동사, 형용사, '이다'와 결합한다.",
+      "info_en": "Combines with verbs, adjectives, and 이다.",
+      "table": {
+        "head": [
+          "품사",
+          "기본형",
+          "활용"
+        ],
+        "rows": [
+          [
+            "동사 · 받침 O",
+            "먹다",
+            "먹으니"
+          ],
+          [
+            "동사 · 받침 X",
+            "오다",
+            "오니"
+          ],
+          [
+            "동사 · 받침 'ㄹ'",
+            "살다",
+            "사니"
+          ],
+          [
+            "형용사 · 받침 O",
+            "작다",
+            "작으니"
+          ],
+          [
+            "형용사 · 받침 X",
+            "크다",
+            "크니"
+          ],
+          [
+            "형용사 · 받침 'ㄹ'",
+            "길다",
+            "기니"
+          ],
+          [
+            "(명사)이다 · 받침 O",
+            "학생",
+            "학생이니"
+          ],
+          [
+            "(명사)이다 · 받침 X",
+            "의사",
+            "의사이니 / 의사니"
+          ]
+        ]
+      }
+    },
+    {
+      "form": "-(으)ㄴ 결과",
+      "tag": "as a result of ~ing  ·  부가 문법 (Additional grammar)",
+      "extra": true,
+      "def_ko": "앞에 오는 말의 행위를 한 후에 그 결과로 뒤 절의 내용이 이루어짐을 나타내는 표현.",
+      "def_en": "An expression showing that the second clause came about as the result of completing the action in the first — 'as a result of ~ing'.",
+      "ex": [
+        {
+          "ko": "그동안 열심히 치료를 받은 결과 병이 다 나았다.",
+          "en": "As a result of diligent treatment all this time, the illness was completely cured."
+        },
+        {
+          "ko": "포기하지 않고 노력한 결과 꿈을 이룰 수 있었다.",
+          "en": "As a result of trying without giving up, I was able to achieve my dream."
+        },
+        {
+          "ko": "계획 없이 돈을 쓴 결과 일주일도 안 돼서 용돈이 다 떨어졌다.",
+          "en": "As a result of spending money without a plan, my allowance ran out in under a week."
+        }
+      ],
+      "info_ko": "동사와 결합한다.",
+      "info_en": "Combines with verbs.",
+      "table": {
+        "head": [
+          "받침",
+          "기본형",
+          "활용"
+        ],
+        "rows": [
+          [
+            "받침 O",
+            "먹다",
+            "먹은 결과"
+          ],
+          [
+            "받침 X",
+            "오다",
+            "온 결과"
+          ],
+          [
+            "받침 'ㄹ'",
+            "살다",
+            "산 결과"
+          ]
+        ]
+      }
+    }
+  ]
+}

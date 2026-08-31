@@ -156,8 +156,7 @@
   table.conj{width:100%;border-collapse:collapse;font-size:13.5px;margin:6px 0 14px}
   table.conj th,table.conj td{border:1px solid var(--line);padding:7px 9px;text-align:center}
   table.conj th{background:var(--magenta-soft);font-weight:700;color:var(--magenta-deep)}
-  table.conj td.res{color:var(--apricot-deep);font-weight:700}
-  .gcard.extra table.conj td.res{color:var(--magenta-deep)}
+  table.conj td.res{color:var(--ink);font-weight:700}
 
   .fc-btn{
     border:none;background:var(--magenta-deep);color:#fff;font-weight:700;font-size:14px;

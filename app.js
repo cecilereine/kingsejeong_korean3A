@@ -44,9 +44,9 @@ function renderVocabGroup(group, lesson) {
     <div class="grid">${group.items.map(item => renderVocabCard(item, lesson)).join('')}</div>`;
 }
 
-/* Conjugation tables differ only in which cells are highlighted as the result. */
+/* Conjugation tables differ only in which cells are emphasised (bold) as the result. */
 const LAST_COLUMN  = (index, row) => index === row.length - 1;
-const AFTER_FIRST  = index => index > 0;
+const NO_EMPHASIS  = () => false;
 
 function renderTable(table, isResultCell) {
   const head = table.head.map(heading => `<th>${esc(heading)}</th>`).join('');
@@ -68,7 +68,7 @@ function renderGrammarCard(entry) {
     </li>`).join('');
 
   const secondTable = entry.table2
-    ? `<div class="lbl">${esc(entry.table2.caption)}</div>${renderTable(entry.table2, AFTER_FIRST)}`
+    ? `<div class="lbl">${esc(entry.table2.caption)}</div>${renderTable(entry.table2, NO_EMPHASIS)}`
     : '';
 
   return `
